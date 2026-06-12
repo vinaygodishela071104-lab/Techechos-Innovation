@@ -1,239 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-<title>Cinematic 3D Layered Hero</title>
- 
-<style>
-.hero{
-  min-height: 100vh;
-  padding: 120px 120px 80px;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  align-items: center;
-  gap: 60px;
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  background:
-    radial-gradient(circle at 12% 18%, rgba(243,150,24,0.22), transparent 22%),
-    radial-gradient(circle at 86% 20%, rgba(105,23,144,0.28), transparent 24%),
-    radial-gradient(circle at 70% 78%, rgba(243,150,24,0.12), transparent 20%),
-    linear-gradient(135deg, #08050f 0%, #12091b 45%, #1b0d29 100%);
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mouse Spotlight</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.hero > *:not(.hero-bg){
-  position: relative;
-  z-index: 2;
-}
+    body {
+      min-height: 100vh;
+      background: #050505;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      position: relative;
+    }
 
-.hero-bg{
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
+    .spotlight {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(
+          circle 140px at var(--x, 50%) var(--y, 50%),
+          rgba(255,255,255,0.22),
+          rgba(255,255,255,0.08) 35%,
+          rgba(0,0,0,0.96) 70%
+        );
+    }
 
-.hero-bg::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle, rgba(255,255,255,0.16) 1.1px, transparent 1.1px);
-  background-size: 32px 32px;
-  opacity: 0.18;
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.75), transparent 92%);
-  animation: dotsDrift 18s linear infinite;
-}
 
-.hero-bg::after{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(243,150,24,0.10), transparent 18%),
-    radial-gradient(circle at 80% 65%, rgba(105,23,144,0.14), transparent 22%);
-  filter: blur(30px);
-  opacity: 0.9;
-  animation: glowPulse 8s ease-in-out infinite alternate;
-}
-
-.hero-line{
-  position: absolute;
-  display: block;
-  height: 1px;
-  border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,0.10),
-    rgba(243,150,24,0.45),
-    rgba(105,23,144,0.42),
-    transparent
-  );
-  box-shadow: 0 0 18px rgba(255,255,255,0.05);
-  opacity: 0.55;
-}
-
-.hero-line--one{
-  top: 24%;
-  left: -12%;
-  width: 52%;
-  transform: rotate(10deg);
-  animation: lineMoveOne 12s ease-in-out infinite;
-}
-
-.hero-line--two{
-  top: 58%;
-  right: -10%;
-  width: 46%;
-  transform: rotate(-14deg);
-  animation: lineMoveTwo 15s ease-in-out infinite;
-}
-
-.hero-line--three{
-  top: 78%;
-  left: 18%;
-  width: 34%;
-  transform: rotate(-8deg);
-  animation: lineMoveThree 10s ease-in-out infinite;
-}
-
-@keyframes dotsDrift{
-  0%{
-    transform: translate3d(0,0,0);
-  }
-  50%{
-    transform: translate3d(-12px,10px,0);
-  }
-  100%{
-    transform: translate3d(0,0,0);
-  }
-}
-
-@keyframes glowPulse{
-  0%{
-    transform: scale(1) translateY(0);
-    opacity: 0.75;
-  }
-  100%{
-    transform: scale(1.08) translateY(-10px);
-    opacity: 1;
-  }
-}
-
-@keyframes lineMoveOne{
-  0%{
-    transform: translateX(0) rotate(10deg);
-    opacity: 0.3;
-  }
-  50%{
-    transform: translateX(50px) rotate(12deg);
-    opacity: 0.75;
-  }
-  100%{
-    transform: translateX(0) rotate(10deg);
-    opacity: 0.3;
-  }
-}
-
-@keyframes lineMoveTwo{
-  0%{
-    transform: translateX(0) rotate(-14deg);
-    opacity: 0.25;
-  }
-  50%{
-    transform: translateX(-44px) rotate(-11deg);
-    opacity: 0.7;
-  }
-  100%{
-    transform: translateX(0) rotate(-14deg);
-    opacity: 0.25;
-  }
-}
-
-@keyframes lineMoveThree{
-  0%{
-    transform: translateX(0) rotate(-8deg);
-    opacity: 0.2;
-  }
-  50%{
-    transform: translateX(28px) rotate(-6deg);
-    opacity: 0.65;
-  }
-  100%{
-    transform: translateX(0) rotate(-8deg);
-    opacity: 0.2;
-  }
-}
- 
-</style>
+    
+  </style>
 </head>
 <body>
- <section class="hero">
-  <div class="hero-bg" aria-hidden="true">
-    <span class="hero-line hero-line--one"></span>
-    <span class="hero-line hero-line--two"></span>
-    <span class="hero-line hero-line--three"></span>
-  </div>
+  <div class="spotlight"></div>
 
-  <div class="hero__content">
-    <span class="hero__tag">TECHECHOS INNOVATION</span>
-    <h1>Elegant technology systems for ambitious enterprises.</h1>
-    <p>
-      We create secure, scalable, and high-performance digital solutions with a
-      premium visual and technical standard.
-    </p>
 
-    <div class="hero__buttons">
-      <a href="#" class="btn btn--primary">Start Project</a>
-      <a href="#" class="btn btn--secondary">Our Services</a>
-    </div>
-  </div>
 
-  <div class="hero__visual">
-    <div class="visual-wrap">
-      <div class="float-card float-card--one">
-        <strong>98%</strong>
-        <span>Client retention</span>
-      </div>
-
-      <div class="float-card float-card--two">
-        <strong>AI</strong>
-        <span>Automation ready</span>
-      </div>
-
-      <div class="float-card float-card--three">
-        <strong>24/7</strong>
-        <span>Support ops</span>
-      </div>
-
-      <div class="glass-card">
-        <span class="glass-card__label">Enterprise Ready</span>
-        <h3>Luxury-grade IT delivery</h3>
-        <p>
-          Cloud engineering, AI integration, cybersecurity, and modern platform
-          architecture for serious businesses.
-        </p>
-
-        <div class="glass-card__stats">
-          <div>
-            <strong>99.2%</strong>
-            <span>System reliability</span>
-          </div>
-          <div>
-            <strong>24/7</strong>
-            <span>Support coverage</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
- 
+  <script>
+    document.addEventListener("pointermove", (e) => {
+      document.documentElement.style.setProperty("--x", `${e.clientX}px`);
+      document.documentElement.style.setProperty("--y", `${e.clientY}px`);
+    });
+  </script>
 </body>
 </html>
- 
