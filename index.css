@@ -543,7 +543,9 @@
 
 .about-stats h4 {
   font-size: 2rem;
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 5px;
 }
 
