@@ -22,16 +22,16 @@ body {
 /*=========================
  HERO
 ==========================*/
-.glow{
-position:fixed;
-width:250px;
-height:250px;
-border-radius:50%;
-  background: radial-gradient(circle, rgba(243,150,24,0.6), transparent 60%);
-filter:blur(80px);
-pointer-events:none;
-transform:translate(-50%,-50%);
-z-index: 7;
+.glow {
+  position: fixed;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(243, 150, 24, 0.6), transparent 60%);
+  filter: blur(80px);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 7;
 }
 .hero {
   min-height: 90vh;
@@ -114,7 +114,7 @@ z-index: 7;
 
 .hero-left h1 {
   color: white;
-  font-size: 65px;
+  font-size: 3.5rem;
   line-height: 1.1;
   margin-bottom: 25px;
 }
@@ -290,13 +290,15 @@ z-index: 7;
 }
 
 .left h1 {
-  font-size: 42px;
+  font-size: 2.5rem;
   line-height: 1.2;
   color: #111;
 }
 
 .left h1 span {
-  color: #f39618;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .desc {
@@ -324,7 +326,9 @@ z-index: 7;
   border-left: 4px solid #f39618;
 }
 .cards i {
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .cards:hover {
@@ -338,7 +342,11 @@ z-index: 7;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(243, 150, 24, 0.15);
+  background: linear-gradient(
+    135deg,
+    rgba(243, 150, 24, 0.12),
+    rgba(105, 23, 144, 0.12)
+  );
   border-radius: 10px;
   font-size: 20px;
 }
@@ -414,7 +422,7 @@ z-index: 7;
 }
 
 .mv-heading h2 {
-  font-size: 48px;
+  font-size: 2.5rem;
   color: #111;
   margin: 20px 0;
 }
@@ -440,12 +448,15 @@ z-index: 7;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 30px;
   padding: 50px;
+
   transition: 0.4s ease;
   position: relative;
   overflow: hidden;
 }
 .mv-card i {
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* hover glow */
@@ -479,9 +490,15 @@ z-index: 7;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   font-size: 30px;
+
   margin-bottom: 25px;
-  background: rgba(243, 150, 24, 0.15);
+  background: linear-gradient(
+    135deg,
+    rgba(243, 150, 24, 0.12),
+    rgba(105, 23, 144, 0.12)
+  );
   color: #fff;
 }
 
@@ -519,7 +536,7 @@ z-index: 7;
 }
 
 .section-header h2 {
-  font-size: 50px;
+  font-size: 2.5rem;
   color: #111;
   margin: 20px 0;
 }
@@ -634,7 +651,7 @@ z-index: 7;
 }
 
 .career-left h2 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: 2.5rem;
   line-height: 1.1;
   margin-bottom: 25px;
   color: #111;
@@ -642,7 +659,9 @@ z-index: 7;
 
 .career-left strong {
   display: block;
-  color: var(--secondary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-top: 10px;
   position: relative;
 }
@@ -716,8 +735,8 @@ z-index: 7;
 
   background: linear-gradient(
     135deg,
-    rgba(243, 150, 24, 0.15),
-    rgba(105, 23, 144, 0.15)
+    rgba(243, 150, 24, 0.12),
+    rgba(105, 23, 144, 0.12)
   );
 
   flex-shrink: 0;
@@ -725,7 +744,9 @@ z-index: 7;
 
 .job-icon i {
   font-size: 28px;
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* CONTENT */
@@ -735,7 +756,7 @@ z-index: 7;
 }
 
 .job-content h3 {
-  font-size: 24px;
+  font-size: 1.5rem;
   margin-bottom: 15px;
   color: #111;
 }
@@ -971,7 +992,7 @@ z-index: 7;
 }
 
 .stats-header h2 {
-  font-size: 52px;
+  font-size: 2.5rem;
   color: #111;
   margin: 20px 0;
   line-height: 1.2;
@@ -1267,7 +1288,7 @@ z-index: 7;
 
   color: var(--primary);
 
-  font-size: 13px;
+  font-size: 2.5rem;
 
   font-weight: 600;
 

@@ -67,7 +67,7 @@
 
 .hero__content h1 {
   color: #fff;
-  font-size: clamp(2.8rem, 6vw, 4.7rem);
+  font-size: 3.5rem;
   line-height: 1.03;
   letter-spacing: -0.04em;
   margin-bottom: 22px;
@@ -378,7 +378,9 @@
 }
 
 .about-content h2 span {
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .about-content p {
@@ -415,7 +417,9 @@
   align-items: center;
 
   background: rgba(243, 150, 24, 0.12);
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .about-btn {
@@ -570,7 +574,9 @@
 }
 
 .section-header h2 span {
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .section-header p {
@@ -643,7 +649,9 @@
 
 .service-icon i {
   font-size: 1.8rem;
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .service-card h3 {
@@ -707,7 +715,9 @@
 }
 
 .why-content h2 span {
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .why-content p {
@@ -755,7 +765,9 @@
 
 .why-icon i {
   font-size: 1.6rem;
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .why-text h3 {
@@ -864,7 +876,9 @@
 }
 
 .industry i {
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 1.5rem;
 }
 
@@ -975,7 +989,9 @@
 }
 
 .tech-item i {
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 1.3rem;
 }
 
@@ -1144,7 +1160,8 @@
 }
 
 .quote {
-  font-size: clamp(2rem, 4vw, 4rem);
+  font-size: 2.5rem;
+
   line-height: 1.25;
   color: #111;
   max-width: 900px;
@@ -1528,9 +1545,16 @@ body.dark-mode .section-header p {
   .process-steps {
     grid-template-columns: 1fr;
   }
+  .step {
+    text-align: center;
+  }
+  .step-number {
+    margin-left: 110px;
+  }
 
   .process-timeline::before {
     display: none;
+    text-align: center;
   }
 
   /* CTA */

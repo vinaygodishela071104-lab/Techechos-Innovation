@@ -100,7 +100,7 @@ body {
   color: var(--primary);
   font-weight: 600;
   font-size: 0.9rem;
-
+  margin-top: 40px;
   margin-bottom: 20px;
 }
 
@@ -480,6 +480,9 @@ body {
 
 .section-badge i {
   font-size: 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .responsive-content h2 {
@@ -552,7 +555,9 @@ body {
 }
 
 .feature-icon i {
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
   font-size: 1.35rem;
 }
@@ -1044,7 +1049,9 @@ body {
 }
 
 .optimization-icon i {
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
   font-size: 1.35rem;
 }
@@ -1155,7 +1162,7 @@ body {
 }
 
 .metric-value {
-  color: #1d2432;
+  color: #000000;
 
   font-size: 2rem;
   font-weight: 800;
@@ -1893,6 +1900,9 @@ body.dark-mode .metric {
   border: 1px solid rgba(29, 36, 50, 0.08);
   border-radius: 30px;
 }
+body.dark-mode .metric-value {
+  color: white;
+}
 
 /* Cards */
 body.dark-mode .flow-card {
@@ -2160,6 +2170,7 @@ body.dark-mode .delivery {
   .middle-cards {
     grid-template-columns: 1fr;
     gap: 24px;
+
     margin: 60px 0;
   }
 
@@ -2178,6 +2189,8 @@ body.dark-mode .delivery {
 
   .middle-card {
     padding: 35px 25px;
+    width: 100%;
+    height: 100%;
   }
 
   .flow-card h3 {

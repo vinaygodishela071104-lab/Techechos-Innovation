@@ -365,8 +365,8 @@ body.dark-mode .dark-mode-btn .fa-sun {
   color: #000000;
 
   padding-top: 70px;
-
-  margin-top: 30px;
+  /* 
+  margin-top: 30px; */
 
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }

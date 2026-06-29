@@ -127,7 +127,7 @@ body {
 }
 
 .hero-content h1 {
-  font-size: 4.3rem;
+  font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.12;
 
@@ -390,6 +390,7 @@ body {
 
 .service-btn i {
   transition: transform 0.4s ease;
+  color: white;
 }
 
 .service-btn:hover {
@@ -661,7 +662,7 @@ body {
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #000000;
+  color: #ffffff;
   font-size: 1rem;
 }
 
@@ -1337,7 +1338,7 @@ body {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
 
   border-radius: 40px;
-
+  margin-bottom: 100px;
   padding: 80px 60px;
 
   text-align: center;
@@ -1357,7 +1358,7 @@ body {
   position: relative;
   display: inline-block;
   padding: 14px 30px;
-  background: #f39618;
+  background: white;
   color: #000;
   font-weight: 600;
   border: none;
@@ -1530,7 +1531,10 @@ body.dark-mode .glow {
   .hero-content h1 {
     font-size: 3.2rem;
   }
-
+  .hero-buttons {
+    margin-left: 240px;
+    text-align: center;
+  }
   .hero-content p {
     margin: 0 auto 30px;
   }

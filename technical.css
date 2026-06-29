@@ -97,21 +97,20 @@ body {
 
 .hero-tag {
   display: inline-block;
-
+  padding: 12px 24px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--primary);
-
   font-size: 14px;
   font-weight: 600;
-
-  letter-spacing: 3px;
-
-  margin-bottom: 25px;
-
+  letter-spacing: 2px;
   text-transform: uppercase;
+  margin-bottom: 25px;
 }
 
 .hero-content h1 {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   line-height: 1.15;
 
   color: #fff;
@@ -175,7 +174,7 @@ REMOTE SUPPORT
 }
 
 .remote-content h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   line-height: 1.2;
 
   color: #111;
@@ -242,7 +241,7 @@ REMOTE SUPPORT
 }
 
 .support-box h3 {
-  color: var(--secondary);
+  color: black;
 
   margin-bottom: 12px;
 
@@ -262,10 +261,6 @@ REMOTE SUPPORT
   border-left-color: var(--primary);
 
   box-shadow: 0 20px 40px rgba(105, 23, 144, 0.12);
-}
-
-.support-box:hover h3 {
-  color: var(--primary);
 }
 
 /* =========================
@@ -306,14 +301,16 @@ REMOTE SUPPORT
 }
 
 .maintenance-content h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   line-height: 1.2;
   color: #080816;
   margin-bottom: 25px;
 }
 
 .maintenance-content h2 span {
-  color: var(--secondary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .maintenance-content p {
@@ -339,13 +336,19 @@ REMOTE SUPPORT
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(243, 150, 24, 0.15);
+  background: linear-gradient(
+    135deg,
+    rgba(243, 150, 24, 0.12),
+    rgba(105, 23, 144, 0.12)
+  );
   border-radius: 10px;
   font-size: 20px;
 }
 
 .feature-icon i {
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 1.2rem;
 }
 
@@ -401,7 +404,9 @@ REMOTE SUPPORT
 
 .info-card i {
   font-size: 2rem;
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 15px;
 }
 
@@ -440,7 +445,9 @@ REMOTE SUPPORT
 
 .main-card i {
   font-size: 4rem;
-  color: var(--secondary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 20px;
 }
 
@@ -487,7 +494,7 @@ REMOTE SUPPORT
 }
 
 .network-content h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   line-height: 1.2;
   color: #080816;
   margin-bottom: 25px;
@@ -521,7 +528,7 @@ REMOTE SUPPORT
 }
 
 .feature-item h4 {
-  color: var(--secondary);
+  color: black;
   margin-bottom: 12px;
   font-size: 1.1rem;
 }
@@ -599,7 +606,9 @@ REMOTE SUPPORT
 }
 
 .stat h3 {
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 2rem;
   margin-bottom: 8px;
 }
@@ -636,18 +645,6 @@ REMOTE SUPPORT
   overflow: hidden;
 }
 
-/* top glow */
-/* .backup-diagonal::before{
-    content:"";
-    position:absolute;
-    width:500px;
-    height:500px;
-    border-radius:50%;
-    top:-200px;
-    right:-200px;
-    filter:blur(80px);
-} */
-
 /* container */
 .backup-wrap {
   max-width: 1200px;
@@ -674,7 +671,7 @@ REMOTE SUPPORT
 }
 
 .backup-left h2 {
-  font-size: 44px;
+  font-size: 2.5rem;
   color: #111;
   line-height: 1.2;
   margin-bottom: 20px;
@@ -762,7 +759,9 @@ REMOTE SUPPORT
 }
 
 .visual-list i {
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* stats strip */
@@ -783,7 +782,9 @@ REMOTE SUPPORT
 }
 
 .stat h4 {
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 24px;
 }
 
@@ -815,7 +816,7 @@ REMOTE SUPPORT
   padding: 10px 20px;
   background: rgba(243, 150, 24, 0.12);
   color: var(--primary);
-  font-size: 14px;
+  font-size: 2.5rem;
   font-weight: 600;
   border-radius: 30px;
   margin-bottom: 20px;
@@ -860,7 +861,9 @@ REMOTE SUPPORT
   overflow: hidden;
 }
 .security-icon i {
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .security-card::before {

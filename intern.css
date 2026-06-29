@@ -216,6 +216,46 @@ textarea {
 .submit-btn:hover {
   transform: translateY(-5px);
 }
+/* Upload Resume */
+
+.resume-upload {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  background: #fff;
+  color: #555;
+}
+
+/* Style only the "Choose File" button */
+
+.resume-upload::file-selector-button {
+  background: linear-gradient(135deg, #f39618, #691790);
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+
+.resume-upload::file-selector-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(105, 23, 144, 0.3);
+}
+
+/* Active Effect */
+
+.resume-upload::file-selector-button:active {
+  transform: scale(0.96);
+}
 
 /* =========================================
    IPAD PRO (769px - 1024px)
