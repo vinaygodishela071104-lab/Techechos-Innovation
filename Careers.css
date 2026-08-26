@@ -8,20 +8,18 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  background: #ffffff;
-  overflow-x: hidden;
-}
-
 :root {
   --primary: #f39618;
   --secondary: #691790;
+  --heading-font: "Space Grotesk", sans-serif;
+  --body-font: "Inter", sans-serif;
 }
 
-/* =========================
-   GLOBAL HELPERS
-========================= */
+body {
+  font-family: var(--body-font);
+  background: #ffffff;
+  overflow-x: hidden;
+}
 
 .container {
   width: 90%;
@@ -35,10 +33,13 @@ body {
 }
 
 .section-header h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   line-height: 1.2;
   color: #111827;
   margin-bottom: 14px;
+  font-family: var(--heading-font);
+  font-weight: 500;
+  letter-spacing: -0.02em;
 }
 
 .section-header p {
@@ -51,32 +52,37 @@ body {
 
 .section-tag,
 .badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 18px;
-  border-radius: 50px;
-  background: #fff;
-  border: 1px solid rgba(105, 23, 144, 0.12);
-  color: #691790;
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 8px 15px;
+  border-radius: 999px;
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid rgba(243, 150, 24, 0.28);
+  background: rgba(243, 150, 24, 0.08);
+  font-family: var(--body-font);
 }
 
 .section-tag i,
 .badge i {
-  color: #f39618;
+  display: none;
 }
 
-/* =========================
-   CURSOR GLOW
-========================= */
+.section-header h2 span,
+.hero-content h1 span,
+.cta-box h2 span {
+  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .glow {
   position: fixed;
-  z-index: 7;
   width: 250px;
   height: 250px;
   border-radius: 50%;
@@ -87,10 +93,6 @@ body {
   z-index: 1;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
-
 .career-hero {
   min-height: 100vh;
   overflow: hidden;
@@ -98,22 +100,32 @@ body {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  padding: 80px 0 40px;
+  padding: 90px 0 50px;
   background:
-    radial-gradient(
-      circle at 15% 20%,
-      rgba(243, 150, 24, 0.16),
-      transparent 22%
-    ),
-    radial-gradient(
-      circle at 85% 25%,
-      rgba(105, 23, 144, 0.2),
-      transparent 24%
-    ),
-    linear-gradient(135deg, #0b0d14 0%, #130f1f 45%, #1a1028 100%);
+    linear-gradient(rgba(7, 10, 18, 0.82), rgba(11, 13, 20, 0.88)),
+    url("images/95c2332c-31f4-4f65-b60d-b8634a1f56ba.png") center center / cover
+      no-repeat;
 }
 
 .career-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(243, 150, 24, 0.14),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(105, 23, 144, 0.16),
+      transparent 26%
+    );
+  pointer-events: none;
+}
+
+.career-hero::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -146,29 +158,30 @@ body {
   gap: 12px;
   padding: 12px 22px;
   border-radius: 50px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(15px);
   margin-bottom: 24px;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-}
-
-.hero-badge i {
-  color: var(--primary);
+  color: #fff;
 }
 
 .hero-content h1 {
-  font-size: 3.8rem;
-  line-height: 1.1;
-  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 1.08;
+  font-weight: 600;
   margin-bottom: 22px;
+  font-family: var(--heading-font);
+  letter-spacing: -0.03em;
 }
 
 .hero-content p {
   max-width: 600px;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 1.05rem;
   line-height: 1.9;
   margin-bottom: 30px;
@@ -245,10 +258,6 @@ body {
   color: var(--primary);
 }
 
-/* =========================
-   HERO VISUAL
-========================= */
-
 .hero-visual {
   position: relative;
   display: flex;
@@ -315,9 +324,11 @@ body {
 .w-90 {
   width: 90%;
 }
+
 .w-70 {
   width: 70%;
 }
+
 .w-50 {
   width: 50%;
 }
@@ -354,6 +365,7 @@ body {
   color: #fff;
   font-size: 0.95rem;
   font-weight: 500;
+  font-family: var(--heading-font);
 }
 
 @keyframes float {
@@ -368,31 +380,27 @@ body {
   }
 }
 
-/* =========================
-   WHY JOIN
-========================= */
-
-.why-join {
+.why-join,
+.jobs-section,
+.hiring-flow,
+.learning-pillars,
+.employee-benefits {
   position: relative;
   overflow: hidden;
   padding: 90px 20px;
   background:
     radial-gradient(
       circle at top left,
-      rgba(243, 150, 24, 0.08),
+      rgba(243, 150, 24, 0.06),
       transparent 30%
     ),
     radial-gradient(
       circle at bottom right,
-      rgba(105, 23, 144, 0.08),
+      rgba(105, 23, 144, 0.06),
       transparent 35%
     ),
     #ffffff;
 }
-
-/* =========================
-   TIMELINE
-========================= */
 
 .timeline {
   position: relative;
@@ -458,6 +466,8 @@ body {
   font-size: 1.5rem;
   color: #111827;
   margin-bottom: 12px;
+  font-family: var(--heading-font);
+  font-weight: 500;
 }
 
 .timeline-content p {
@@ -493,14 +503,6 @@ body {
 
 .timeline-item.right .timeline-dot {
   left: -35px;
-}
-
-/* =========================
-   JOBS SECTION
-========================= */
-
-.jobs-section {
-  padding: 90px 20px;
 }
 
 .tabs {
@@ -556,9 +558,6 @@ body {
   border-radius: 18px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition: 0.3s;
-  opacity: 1;
-  transform: translateY(20px);
-  animation: fadeIn 0.6s ease forwards;
 }
 
 .job-card:hover {
@@ -570,6 +569,8 @@ body {
   font-size: 1.3rem;
   margin-bottom: 8px;
   color: #111827;
+  font-family: var(--heading-font);
+  font-weight: 500;
 }
 
 .job-meta {
@@ -611,26 +612,6 @@ body {
   margin-bottom: 8px;
 }
 
-/* =========================
-   HIRING FLOW
-========================= */
-
-.hiring-flow {
-  padding: 90px 20px;
-  background:
-    radial-gradient(
-      circle at top left,
-      rgba(243, 150, 24, 0.06),
-      transparent 35%
-    ),
-    radial-gradient(
-      circle at bottom right,
-      rgba(105, 23, 144, 0.06),
-      transparent 35%
-    ),
-    #ffffff;
-}
-
 .flow {
   display: flex;
   align-items: center;
@@ -669,6 +650,8 @@ body {
   font-size: 1rem;
   color: #111827;
   margin-bottom: 8px;
+  font-family: var(--heading-font);
+  font-weight: 500;
 }
 
 .flow-card p {
@@ -702,30 +685,6 @@ body {
   letter-spacing: 1px;
 }
 
-.flow-card:hover + .arrow i {
-  color: #f39618;
-}
-
-/* =========================
-   GROWTH RADIAL
-========================= */
-
-.growth-radial {
-  padding: 90px 20px;
-  background:
-    radial-gradient(
-      circle at 20% 20%,
-      rgba(243, 150, 24, 0.1),
-      transparent 40%
-    ),
-    radial-gradient(
-      circle at 80% 30%,
-      rgba(105, 23, 144, 0.1),
-      transparent 40%
-    ),
-    #ffffff;
-}
-
 .pillar {
   display: flex;
   align-items: flex-start;
@@ -741,6 +700,7 @@ body {
   color: #f39618;
   min-width: 45px;
   padding-top: 6px;
+  font-family: var(--heading-font);
 }
 
 .icon {
@@ -751,26 +711,28 @@ body {
   justify-content: center;
   border-radius: 10px;
   background: rgba(105, 23, 144, 0.08);
-
   font-size: 1.2rem;
   flex-shrink: 0;
   transition: 0.3s;
 }
+
 .icon i {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .content {
   flex: 1;
 }
 
 .pillar-title {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 6px;
   color: #111827;
   transition: 0.3s;
+  font-family: var(--heading-font);
 }
 
 .pillar-text {
@@ -815,30 +777,18 @@ body {
   gap: 22px;
 }
 
-/* =========================
-   BENEFIT TILE (PREMIUM STYLE)
-========================= */
-
 .tile {
   position: relative;
-
   padding: 28px 22px;
-
   border-radius: 18px;
-
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
-
   border: 1px solid rgba(0, 0, 0, 0.06);
-
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
-
   transition: 0.4s;
-
   overflow: hidden;
 }
 
-/* glow layer */
 .tile::before {
   content: "";
   position: absolute;
@@ -855,7 +805,6 @@ body {
   transition: 0.4s;
 }
 
-/* ICON */
 .tile i {
   font-size: 2rem;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -865,15 +814,15 @@ body {
   position: relative;
 }
 
-/* TITLE */
 .tile h3 {
   font-size: 1.1rem;
   margin-bottom: 6px;
   color: #111827;
   position: relative;
+  font-family: var(--heading-font);
+  font-weight: 500;
 }
 
-/* TEXT */
 .tile p {
   font-size: 0.92rem;
   color: #6b7280;
@@ -881,7 +830,6 @@ body {
   position: relative;
 }
 
-/* HOVER EFFECT */
 .tile:hover {
   transform: translateY(-10px) scale(1.03);
   border-color: rgba(243, 150, 24, 0.4);
@@ -892,22 +840,13 @@ body {
   opacity: 1;
 }
 
-/* ICON HOVER */
-.tile:hover i {
-  color: var(--secondary);
-  transform: rotate(10deg);
-}
-
 .cta-section {
   position: relative;
   overflow: hidden;
-
   padding: 120px 20px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background:
     radial-gradient(
       circle at 20% 20%,
@@ -922,7 +861,6 @@ body {
     #0b0d14;
 }
 
-/* glowing blobs */
 .cta-section::before,
 .cta-section::after {
   content: "";
@@ -946,10 +884,6 @@ body {
   right: -120px;
 }
 
-/* =========================
-   CONTENT
-========================= */
-
 .cta-box {
   text-align: center;
   max-width: 750px;
@@ -958,9 +892,12 @@ body {
 }
 
 .cta-box h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #ffffff;
   margin-bottom: 15px;
+  font-family: var(--heading-font);
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 .cta-box p {
@@ -970,36 +907,23 @@ body {
   margin-bottom: 35px;
 }
 
-/* =========================
-   BUTTON
-========================= */
-
 .cta-btn {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-
   padding: 16px 28px;
-
   border-radius: 50px;
-
   font-size: 1rem;
   font-weight: 600;
-
   color: #fff;
   text-decoration: none;
-
   background: linear-gradient(135deg, #f39618, #ffb347);
-
   box-shadow: 0 10px 30px rgba(243, 150, 24, 0.35);
-
   transition: 0.4s;
-
   position: relative;
   overflow: hidden;
 }
 
-/* shimmer effect */
 .cta-btn::before {
   content: "";
   position: absolute;
@@ -1007,14 +931,12 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-
   background: linear-gradient(
     120deg,
     transparent,
     rgba(255, 255, 255, 0.4),
     transparent
   );
-
   transition: 0.5s;
 }
 
@@ -1027,7 +949,6 @@ body {
   box-shadow: 0 18px 45px rgba(243, 150, 24, 0.45);
 }
 
-/* icon animation */
 .cta-btn i {
   transition: 0.3s;
 }
@@ -1035,22 +956,14 @@ body {
 .cta-btn:hover i {
   transform: translateX(5px);
 }
-/* =========================
-   DARK MODE (PREMIUM BLACK SYSTEM)
-========================= */
 
 body.dark-mode {
   --primary: #f39618;
   --secondary: #b46cff;
-}
-
-/* GLOBAL BACKGROUND */
-body.dark-mode {
   background: #0b0d14;
   color: #e5e7eb;
 }
 
-/* TEXT OVERRIDES */
 body.dark-mode p {
   color: #a9b0bd;
 }
@@ -1062,20 +975,13 @@ body.dark-mode h4 {
   color: #ffffff;
 }
 
-/* =========================
-   SECTION BACKGROUNDS
-========================= */
-
 body.dark-mode .why-join,
 body.dark-mode .jobs-section,
 body.dark-mode .hiring-flow,
-body.dark-mode .growth-radial {
+body.dark-mode .learning-pillars,
+body.dark-mode .employee-benefits {
   background: #0b0d14;
 }
-
-/* =========================
-   CARDS (MOST IMPORTANT FIX)
-========================= */
 
 body.dark-mode .tile,
 body.dark-mode .flow-card,
@@ -1088,31 +994,19 @@ body.dark-mode .dashboard-card {
   backdrop-filter: blur(12px);
 }
 
-/* =========================
-   TIMELINE DARK MODE FIX
-========================= */
-
-body.dark-mode .timeline-content {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-body.dark-mode .timeline-content p {
+body.dark-mode .timeline-content p,
+body.dark-mode .flow-card p,
+body.dark-mode .pillar-text,
+body.dark-mode .tile p,
+body.dark-mode .job-meta,
+body.dark-mode .section-header p {
   color: #a9b0bd;
-}
-
-body.dark-mode .timeline-content h3 {
-  color: #ffffff;
 }
 
 body.dark-mode .timeline-dot {
   background: #111827;
   border: 4px solid rgba(255, 255, 255, 0.08);
 }
-
-/* =========================
-   TABS
-========================= */
 
 body.dark-mode .tab {
   background: rgba(255, 255, 255, 0.04);
@@ -1125,48 +1019,18 @@ body.dark-mode .tab.active {
   color: #fff;
 }
 
-/* =========================
-   BUTTON FIXES
-========================= */
-
 body.dark-mode .btn-secondary {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-/* =========================
-   SECTION TAG / BADGE
-========================= */
-
 body.dark-mode .section-tag,
 body.dark-mode .badge {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #e5e7eb;
+  color: #ffb347;
+  border: 1px solid rgba(243, 150, 24, 0.24);
+  background: rgba(243, 150, 24, 0.1);
 }
 
-/* =========================
-   HERO (optional enhancement)
-========================= */
-
-body.dark-mode .career-hero {
-  background:
-    radial-gradient(
-      circle at 15% 20%,
-      rgba(243, 150, 24, 0.1),
-      transparent 25%
-    ),
-    radial-gradient(
-      circle at 85% 25%,
-      rgba(105, 23, 144, 0.15),
-      transparent 25%
-    ),
-    linear-gradient(135deg, #05060a 0%, #0b0d14 50%, #0f1117 100%);
-}
-/* =========================
-   SAMSUNG GALAXY S8+ 
-   360 x 740
-========================= */
 @media only screen and (max-width: 360px) {
   .container,
   .hero-container {
@@ -1185,8 +1049,8 @@ body.dark-mode .career-hero {
   }
 
   .hero-content h1 {
-    font-size: 2.2rem;
-    line-height: 1.2;
+    font-size: 2.5rem;
+    line-height: 1.15;
   }
 
   .hero-content p {
@@ -1194,6 +1058,7 @@ body.dark-mode .career-hero {
     line-height: 1.7;
     margin: 0 auto 24px;
   }
+
   .hero-badge {
     margin-top: 40px;
   }
@@ -1330,10 +1195,6 @@ body.dark-mode .career-hero {
   }
 }
 
-/* =========================
-   IPAD MINI
-   768 x 1024
-========================= */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .hero-container {
     grid-template-columns: 1fr;
@@ -1396,10 +1257,6 @@ body.dark-mode .career-hero {
   }
 }
 
-/* =========================
-   IPAD PRO
-   1024 x 1366
-========================= */
 @media only screen and (min-width: 1024px) and (max-width: 1366px) {
   .hero-container {
     grid-template-columns: 1fr 1fr;

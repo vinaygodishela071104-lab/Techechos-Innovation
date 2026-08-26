@@ -1,146 +1,143 @@
-// // Load Navbar
-// fetch('../components/navbar.html')
-//   .then(response => response.text())
-//   .then(data => {
-//     document.getElementById('navbar').innerHTML = data;
-
-//     const header = document.querySelector(".header");
-
-//     function handleScroll() {
-//       if (window.scrollY > 20) {
-//         header.classList.add("scrolled");
-//       } else {
-//         header.classList.remove("scrolled");
-//       }
-//     }
-
-//     handleScroll();
-//     window.addEventListener("scroll", handleScroll);
-//   });
-
-// // Load Footer
-// fetch('../components/footer.html')
-//   .then(response => response.text())
-//   .then(data => {
-//     document.getElementById('footer').innerHTML = data;
-//   });
-//   const glow=document.querySelector('.glow');
-
-// document.addEventListener('mousemove',(e)=>{
-
-// glow.style.left=e.clientX+'px';
-// glow.style.top=e.clientY+'px';
-
-// });
-// const elements = document.querySelectorAll(
-// ".reveal,.reveal-left,.reveal-right,.reveal-scale"
-// );
-
-// const observer = new IntersectionObserver(
-// (entries)=>{
-
-//     entries.forEach(entry=>{
-
-//         if(entry.isIntersecting){
-//             entry.target.classList.add("active");
-//         }
-
-//     });
-
-// },
-// {
-//     threshold:0.15
-// }
-// );
-
-// elements.forEach(el=>{
-//     observer.observe(el);
-// });
-// ==============================
-// LOAD NAVBAR
-// ==============================
 fetch("../components/navbar.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("navbar").innerHTML = data;
 
     const header = document.querySelector(".header");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navbar = document.querySelector(".navbar");
+    const dropdownLinks = document.querySelectorAll(".dropdown > a");
 
-    // ==============================
-    // SCROLL EFFECT
-    // ==============================
-    function handleScroll() {
-      if (window.scrollY > 20) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
+    function setActiveNavLink() {
+      const currentPath =
+        window.location.pathname.split("/").pop().toLowerCase() || "index.html";
+
+      const navLinks = document.querySelectorAll(".navbar a");
+
+      navLinks.forEach((link) => {
+        link.removeAttribute("aria-current");
+
+        const href = link.getAttribute("href");
+        if (!href || href.startsWith("#")) return;
+
+        const linkPath = href.split("/").pop().toLowerCase();
+
+        if (linkPath === currentPath) {
+          link.setAttribute("aria-current", "page");
+        }
+      });
     }
 
+    function handleScroll() {
+      if (!header) return;
+      header.classList.toggle("scrolled", window.scrollY > 20);
+    }
+
+    function closeMobileMenu() {
+      if (!navbar || !menuToggle) return;
+
+      navbar.classList.remove("active");
+      menuToggle.setAttribute("aria-label", "Open menu");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+
+      document.querySelectorAll(".dropdown").forEach((item) => {
+        item.classList.remove("active");
+      });
+    }
+
+    setActiveNavLink();
     handleScroll();
     window.addEventListener("scroll", handleScroll);
 
-    // ==============================
-    // HAMBURGER MENU
-    // ==============================
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navbar = document.querySelector(".navbar");
-
     if (menuToggle && navbar) {
       menuToggle.addEventListener("click", () => {
-        navbar.classList.toggle("active");
+        const isOpen = navbar.classList.toggle("active");
+
+        menuToggle.setAttribute(
+          "aria-label",
+          isOpen ? "Close menu" : "Open menu",
+        );
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        menuToggle.innerHTML = isOpen
+          ? '<i class="fa-solid fa-xmark"></i>'
+          : '<i class="fa-solid fa-bars"></i>';
+      });
+
+      document.querySelectorAll(".navbar a").forEach((link) => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth <= 1024 && !link.closest(".dropdown")) {
+            closeMobileMenu();
+          }
+        });
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 1024) {
+          closeMobileMenu();
+        }
       });
     }
 
-    // ==============================
-    // DROPDOWN FIX (MOBILE)
-    // ==============================
-    document.querySelectorAll(".dropdown > a").forEach((link) => {
+    dropdownLinks.forEach((link) => {
       link.addEventListener("click", function (e) {
         if (window.innerWidth <= 1024) {
           e.preventDefault();
-          this.parentElement.classList.toggle("active");
+
+          const parent = this.parentElement;
+
+          document.querySelectorAll(".dropdown").forEach((item) => {
+            if (item !== parent) item.classList.remove("active");
+          });
+
+          parent.classList.toggle("active");
         }
       });
     });
-  });
-// ==============================
-// LOAD FOOTER
-// ==============================
+  })
+  .catch((error) => console.error("Navbar load error:", error));
+
 fetch("../components/footer.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("footer").innerHTML = data;
-  });
+  })
+  .catch((error) => console.error("Footer load error:", error));
 
-// ==============================
-// CURSOR GLOW EFFECT
-// ==============================
 const glow = document.querySelector(".glow");
 
 if (glow) {
   document.addEventListener("mousemove", (e) => {
-    glow.style.left = e.clientX + "px";
-    glow.style.top = e.clientY + "px";
+    glow.style.left = `${e.clientX}px`;
+    glow.style.top = `${e.clientY}px`;
   });
 }
 
-// ==============================
-// SCROLL REVEAL ANIMATION
-// ==============================
-const elements = document.querySelectorAll(
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+).matches;
+
+const revealElements = document.querySelectorAll(
   ".reveal, .reveal-left, .reveal-right, .reveal-scale",
 );
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-      }
-    });
-  },
-  { threshold: 0.15 },
-);
+if (!prefersReducedMotion && revealElements.length) {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+      rootMargin: "0px 0px -40px 0px",
+    },
+  );
 
-elements.forEach((el) => observer.observe(el));
+  revealElements.forEach((el) => revealObserver.observe(el));
+} else {
+  revealElements.forEach((el) => el.classList.add("active"));
+}

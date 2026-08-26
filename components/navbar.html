@@ -1,45 +1,59 @@
 <header class="header">
-  <div class="logo">
+  <a href="index.html" class="logo" aria-label="Techechos Innovation Home">
     <img src="/images/logo1 (3).png" alt="Techechos Logo" />
+    <div class="logo-text">
+      <h1>Techechos Innovation</h1>
+      <div class="content">Private Limited</div>
+    </div>
+  </a>
 
-    <a href="index.html">
-      <div class="logo-text">
-        <h1>
-          <span class="brand">Techechos</span>
-          <span class="company">Innovation</span>
-        </h1>
-        <span class="content"> Private Limited</span>
-      </div>
-    </a>
-  </div>
+  <nav class="main-nav" aria-label="Primary navigation">
+    <ul class="navbar" id="primary-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
 
-  <ul class="navbar">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li class="dropdown">
-      <a href="service.html" class="drop-link">
-        Services <i class="fa-solid fa-chevron-down"></i>
-      </a>
+      <li class="dropdown">
+        <a href="service.html" class="drop-link">
+          Services <i class="fa-solid fa-chevron-down"></i>
+        </a>
 
-      <ul class="dropdown-menu">
-        <li><a href="web.html">WEBSITE DEVELOPMENT </a></li>
-        <li><a href="app.html">APPLICATION DEVELOPMENT</a></li>
-        <li><a href="testing.html">TESTING SERVICES</a></li>
-        <li><a href="technical.html">TECHNICAL SUPPORT</a></li>
-        <li><a href="medical.html">MEDICAL CODING</a></li>
-        <li><a href="epub.html">EPUB CONVERSIONS </a></li>
-      </ul>
-    </li>
-    <li><a href="Careers.html">Careers</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
+        <ul class="dropdown-menu">
+          <li><a href="web.html">Website Development</a></li>
+          <li><a href="app.html">Application Development</a></li>
+          <li><a href="testing.html">Testing Services</a></li>
+          <li><a href="technical.html">Technical Support</a></li>
+          <li><a href="medical.html">Medical Coding</a></li>
+          <li><a href="epub.html">EPUB Conversions</a></li>
+        </ul>
+      </li>
+
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
   <div class="header-actions">
-    <button class="dark-mode-btn">
+    <a href="contact.html" class="contact-btn">
+      <i class="fa-solid fa-paper-plane"></i>
+      <span>Contact Us</span>
+    </a>
+
+    <button
+      class="dark-mode-btn"
+      type="button"
+      aria-label="Toggle dark mode"
+    >
       <i class="fa-solid fa-moon"></i>
       <i class="fa-solid fa-sun"></i>
     </button>
-    <button class="menu-toggle">
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="primary-menu"
+    >
       <i class="fa-solid fa-bars"></i>
     </button>
   </div>
