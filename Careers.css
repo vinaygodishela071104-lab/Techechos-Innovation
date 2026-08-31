@@ -10,7 +10,7 @@ html {
 
 :root {
   --primary: #f39618;
-  --secondary: #691790;
+  --secondary: purple;
   --heading-font: "Space Grotesk", sans-serif;
   --body-font: "Inter", sans-serif;
 }
@@ -223,7 +223,6 @@ body {
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(15px);
 }
-
 
 .culture-highlights {
   display: flex;
@@ -955,7 +954,7 @@ body {
 
 body.dark-mode {
   --primary: #f39618;
-  --secondary: #b46cff;
+  --secondary: purple;
   background: #0b0d14;
   color: #e5e7eb;
 }
