@@ -224,10 +224,6 @@ body {
   backdrop-filter: blur(15px);
 }
 
-.btn-secondary:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.1);
-}
 
 .culture-highlights {
   display: flex;

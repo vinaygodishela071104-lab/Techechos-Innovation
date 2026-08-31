@@ -4,11 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-    <link rel="stylesheet" href="intern.css" />
-    <link rel="icon" href="images/logo1 (3).png" />
-
     <title>Internship</title>
+
+    <link rel="icon" href="images/logo1 (3).png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="intern.css" />
   </head>
   <body>
     <section class="internship-apply">
@@ -16,63 +27,71 @@
         <!-- LEFT SIDE -->
 
         <div class="internship-info">
-          <span>INTERNSHIP PROGRAM</span>
+          <div class="internship-overlay"></div>
 
-          <h2>Kickstart Your Career With Techechos Innovation</h2>
+          <div class="internship-info-content">
+            <span class="section-tag">Internship Program</span>
 
-          <p>
-            Gain real-world experience, work on live projects, collaborate with
-            industry professionals, and build skills that prepare you for a
-            successful tech career.
-          </p>
+            <h1>
+              Kickstart Your Career With
+              <span>Techechos Innovation</span>
+            </h1>
 
-          <div class="benefits">
-            <div class="benefit">
-              <div class="benefit-icon">
-                <i class="fa-solid fa-code"></i>
-              </div>
-              <div class="benefit-content">
-                <h4>Live Projects</h4>
-                <p>Work on real-world industry projects.</p>
-              </div>
-            </div>
+            <p>
+              Gain real-world experience, work on live projects, collaborate
+              with industry professionals, and build skills that prepare you for
+              a successful tech career.
+            </p>
 
-            <div class="benefit">
-              <div class="benefit-icon">
-                <i class="fa-solid fa-user-graduate"></i>
+            <div class="benefits">
+              <div class="benefit">
+                <div class="benefit-icon">
+                  <i class="fa-solid fa-code"></i>
+                </div>
+                <div class="benefit-content">
+                  <h3>Live Projects</h3>
+                  <p>Work on real-world industry projects.</p>
+                </div>
               </div>
-              <div class="benefit-content">
-                <h4>Mentorship</h4>
-                <p>Learn directly from experienced professionals.</p>
-              </div>
-            </div>
 
-            <div class="benefit">
-              <div class="benefit-icon">
-                <i class="fa-solid fa-certificate"></i>
+              <div class="benefit">
+                <div class="benefit-icon">
+                  <i class="fa-solid fa-user-graduate"></i>
+                </div>
+                <div class="benefit-content">
+                  <h3>Mentorship</h3>
+                  <p>Learn directly from experienced professionals.</p>
+                </div>
               </div>
-              <div class="benefit-content">
-                <h4>Certificate</h4>
-                <p>Receive internship completion certification.</p>
-              </div>
-            </div>
-            <div class="benefit">
-              <div class="benefit-icon">
-                <i class="fa-solid fa-user-tie"></i>
-              </div>
-              <div class="benefit-content">
-                <h4>Future Employement</h4>
-                <p>Enhance your chances of securing future employment.</p>
-              </div>
-            </div>
 
-            <div class="benefit">
-              <div class="benefit-icon">
-                <i class="fa-solid fa-briefcase"></i>
+              <div class="benefit">
+                <div class="benefit-icon">
+                  <i class="fa-solid fa-certificate"></i>
+                </div>
+                <div class="benefit-content">
+                  <h3>Certificate</h3>
+                  <p>Receive internship completion certification.</p>
+                </div>
               </div>
-              <div class="benefit-content">
-                <h4>Career Opportunities</h4>
-                <p>Potential pre-placement opportunities.</p>
+
+              <div class="benefit">
+                <div class="benefit-icon">
+                  <i class="fa-solid fa-user-tie"></i>
+                </div>
+                <div class="benefit-content">
+                  <h3>Future Employment</h3>
+                  <p>Enhance your chances of securing future employment.</p>
+                </div>
+              </div>
+
+              <div class="benefit">
+                <div class="benefit-icon">
+                  <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <div class="benefit-content">
+                  <h3>Career Opportunities</h3>
+                  <p>Potential pre-placement opportunities.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -86,32 +105,33 @@
             Back to Careers
           </a>
 
-          <h3>Internship Application</h3>
+          <span class="section-tag">Apply Now</span>
+          <h2>Internship <span>Application</span></h2>
 
           <div class="form-grid">
             <div class="input-group">
-              <label>Full Name</label>
-              <input type="text" required />
+              <label for="full-name">Full Name</label>
+              <input id="full-name" type="text" required />
             </div>
 
             <div class="input-group">
-              <label>Email Address</label>
-              <input type="email" required />
+              <label for="email">Email Address</label>
+              <input id="email" type="email" required />
             </div>
 
             <div class="input-group">
-              <label>Phone Number</label>
-              <input type="tel" />
+              <label for="phone">Phone Number</label>
+              <input id="phone" type="tel" />
             </div>
 
             <div class="input-group">
-              <label>College / University</label>
-              <input type="text" />
+              <label for="college">College / University</label>
+              <input id="college" type="text" />
             </div>
 
             <div class="input-group">
-              <label>Degree</label>
-              <select>
+              <label for="degree">Degree</label>
+              <select id="degree">
                 <option>Select Degree</option>
                 <option>B.Tech</option>
                 <option>M.Tech</option>
@@ -122,13 +142,13 @@
             </div>
 
             <div class="input-group">
-              <label>Branch / Specialization</label>
-              <input type="text" />
+              <label for="branch">Branch / Specialization</label>
+              <input id="branch" type="text" />
             </div>
 
             <div class="input-group">
-              <label>Current Year</label>
-              <select>
+              <label for="year">Current Year</label>
+              <select id="year">
                 <option>Select Year</option>
                 <option>1st Year</option>
                 <option>2nd Year</option>
@@ -138,40 +158,44 @@
             </div>
 
             <div class="input-group">
-              <label>Internship Domain</label>
-              <select>
+              <label for="domain">Internship Domain</label>
+              <select id="domain">
                 <option>Select Position</option>
                 <option>Frontend Developer</option>
                 <option>Backend Developer</option>
                 <option>Full Stack Developer</option>
-                <option>Word Press Developer</option>
+                <option>WordPress Developer</option>
                 <option>HR Team</option>
               </select>
             </div>
 
             <div class="input-group full">
-              <label>Technical Skills</label>
-              <input type="text" placeholder="HTML, CSS, JavaScript, Python" />
+              <label for="skills">Technical Skills</label>
+              <input
+                id="skills"
+                type="text"
+                placeholder="HTML, CSS, JavaScript, Python"
+              />
             </div>
 
             <div class="input-group full">
-              <label>LinkedIn / Portfolio / GitHub</label>
-              <input type="url" />
+              <label for="portfolio">LinkedIn / Portfolio / GitHub</label>
+              <input id="portfolio" type="url" />
             </div>
 
             <div class="input-group full">
-              <label>Academic Projects</label>
-              <textarea rows="4"></textarea>
+              <label for="projects">Academic Projects</label>
+              <textarea id="projects" rows="4"></textarea>
             </div>
 
             <div class="input-group full">
-              <label>Why Do You Want This Internship?</label>
-              <textarea rows="5"></textarea>
+              <label for="reason">Why Do You Want This Internship?</label>
+              <textarea id="reason" rows="5"></textarea>
             </div>
 
             <div class="input-group">
-              <label>Preferred Internship Duration</label>
-              <select>
+              <label for="duration">Preferred Internship Duration</label>
+              <select id="duration">
                 <option>1 Month</option>
                 <option>2 Months</option>
                 <option>3 Months</option>
@@ -180,13 +204,13 @@
             </div>
 
             <div class="input-group">
-              <label>Expected Joining Date</label>
-              <input type="date" />
+              <label for="joining-date">Expected Joining Date</label>
+              <input id="joining-date" type="date" />
             </div>
 
             <div class="input-group full">
-              <label>Upload Resume</label>
-              <input type="file"  class="resume-upload"/>
+              <label for="resume">Upload Resume</label>
+              <input id="resume" type="file" class="resume-upload" />
             </div>
           </div>
 

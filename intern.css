@@ -2,22 +2,87 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
 :root {
   --primary: #f39618;
   --secondary: #691790;
+  --heading-font: "Space Grotesk", sans-serif;
+  --body-font: "Inter", sans-serif;
+  --dark: #111827;
+  --text: #5f6470;
+  --white: #ffffff;
+  --light: #f7f8fc;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: #f7f8fc;
+  font-family: var(--body-font);
+  background: var(--light);
+  color: var(--dark);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+}
+
+p,
+a,
+button,
+span,
+label,
+input,
+select,
+textarea {
+  font-family: var(--body-font);
+}
+
+.section-tag {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 8px 15px;
+  border-radius: 999px;
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid rgba(243, 150, 24, 0.28);
+  background: rgba(243, 150, 24, 0.08);
+  font-family: var(--body-font);
+}
+
+.internship-info h1,
+.application-form h2 {
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.internship-info h1 span,
+.application-form h2 span {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* SECTION */
 
 .internship-apply {
-  padding: 120px 8%;
+  padding: 100px 8%;
 }
 
 .internship-container {
@@ -26,6 +91,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 40px;
+  align-items: stretch;
 }
 
 /* BACK BUTTON */
@@ -41,53 +107,86 @@ body {
   font-weight: 600;
   border-radius: 12px;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .back-btn:hover {
   transform: translateY(-3px);
 }
 
-/* LEFT SIDE */
+/* HERO / LEFT SIDE */
 
 .internship-info {
-  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  position: relative;
+  overflow: hidden;
   border-radius: 30px;
   padding: 60px 50px;
   color: #fff;
-  position: relative;
-  overflow: hidden;
+  background:
+    linear-gradient(rgba(11, 15, 26, 0.76), rgba(11, 15, 26, 0.84)),
+    url("images/hero-epub-bg.jpg") center/cover no-repeat;
+  min-height: 100%;
+}
+
+.internship-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(243, 150, 24, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(105, 23, 144, 0.18),
+      transparent 40%
+    );
+  z-index: 0;
+}
+
+.internship-info::before,
+.internship-info::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  filter: blur(90px);
+  z-index: 0;
 }
 
 .internship-info::before {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
   top: -100px;
-  right: -100px;
+  left: -80px;
+  background: rgba(243, 150, 24, 0.18);
 }
 
-.internship-info span {
-  color: var(--primary);
-  letter-spacing: 3px;
-  font-size: 14px;
+.internship-info::after {
+  bottom: -100px;
+  right: -80px;
+  background: rgba(105, 23, 144, 0.18);
+}
+
+.internship-info-content {
+  position: relative;
+  z-index: 1;
+}
+
+.internship-info h1 {
+  font-size: 3.5rem;
   font-weight: 600;
-  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #fff;
+  max-width: 11ch;
 }
 
-.internship-info h2 {
-  font-size: 48px;
-  line-height: 1.2;
-  margin: 20px 0;
-}
-
-.internship-info > p {
-  line-height: 1.8;
-  opacity: 0.9;
+.internship-info > .internship-info-content > p {
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.88);
   margin-bottom: 40px;
+  max-width: 58ch;
+  font-size: 1rem;
 }
 
 /* BENEFITS */
@@ -95,30 +194,38 @@ body {
 .benefits {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 22px;
 }
 
 .benefit {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 100px;
   gap: 18px;
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
+}
+
+.benefit:hover {
+  transform: translateY(-6px);
+  border-color: rgba(243, 150, 24, 0.55);
+  box-shadow: 0 18px 35px rgba(243, 150, 24, 0.12);
 }
 
 .benefit-icon {
-  width: 60px;
-  height: 60px;
-  min-width: 60px;
-  min-height: 60px;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.15);
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
+  min-height: 58px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 22px;
-}
-
-.benefit-icon i {
   color: #fff;
 }
 
@@ -126,18 +233,18 @@ body {
   flex: 1;
 }
 
-.benefit-content h4 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 6px;
-  line-height: 1.3;
+.benefit-content h3 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #fff;
 }
 
 .benefit-content p {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.6;
-  opacity: 0.9;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.78);
 }
 
 /* FORM */
@@ -149,8 +256,10 @@ body {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
 }
 
-.application-form h3 {
-  font-size: 32px;
+.application-form h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--dark);
   margin-bottom: 30px;
 }
 
@@ -178,8 +287,10 @@ body {
   border: 1px solid #ddd;
   border-radius: 12px;
   outline: none;
-  transition: 0.3s;
+  transition: 0.3s ease;
   font-size: 15px;
+  font-family: var(--body-font);
+  background: #fff;
 }
 
 .input-group input:focus,
@@ -190,7 +301,7 @@ body {
 }
 
 .full {
-  grid-column: 1/-1;
+  grid-column: 1 / -1;
 }
 
 textarea {
@@ -210,13 +321,15 @@ textarea {
   font-size: 16px;
   font-weight: 600;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  transition: 0.3s;
+  transition: 0.3s ease;
+  font-family: var(--body-font);
 }
 
 .submit-btn:hover {
   transform: translateY(-5px);
 }
-/* Upload Resume */
+
+/* FILE INPUT */
 
 .resume-upload {
   width: 100%;
@@ -228,8 +341,6 @@ textarea {
   background: #fff;
   color: #555;
 }
-
-/* Style only the "Choose File" button */
 
 .resume-upload::file-selector-button {
   background: linear-gradient(135deg, #f39618, #691790);
@@ -244,77 +355,48 @@ textarea {
   transition: all 0.3s ease;
 }
 
-/* Hover Effect */
-
 .resume-upload::file-selector-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(105, 23, 144, 0.3);
 }
-
-/* Active Effect */
 
 .resume-upload::file-selector-button:active {
   transform: scale(0.96);
 }
 
 /* =========================================
-   IPAD PRO (769px - 1024px)
+   IPAD PRO
 ========================================= */
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .internship-apply {
-    padding: 100px 5%;
+    padding: 90px 5%;
   }
 
   .internship-container {
-    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
-    align-items: stretch; /* Important */
   }
 
   .internship-info,
   .application-form {
     height: 100%;
-    display: flex;
-    flex-direction: column;
   }
 
   .internship-info {
     padding: 45px 35px;
   }
 
-  .internship-info h2 {
-    font-size: 38px;
+  .internship-info h1 {
+    font-size: 3rem;
   }
 
-  .internship-info > p {
-    font-size: 15px;
-  }
-
-  .benefits {
-    flex: 1; /* fills remaining height */
-    justify-content: space-evenly;
-  }
-
-  .benefit {
-    gap: 15px;
-    margin-bottom: 0;
-  }
-
-  .benefit-icon {
-    width: 55px;
-    height: 55px;
-    min-width: 55px;
-    min-height: 55px;
+  .application-form h2 {
+    font-size: 2.3rem;
   }
 
   .application-form {
     padding: 40px 30px;
-  }
-
-  .application-form h3 {
-    font-size: 28px;
   }
 
   .form-grid {
@@ -329,7 +411,7 @@ textarea {
 }
 
 /* =========================================
-   IPAD MINI (481px - 768px)
+   IPAD MINI
 ========================================= */
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
@@ -350,21 +432,16 @@ textarea {
     padding: 40px 30px;
   }
 
-  .internship-info h2 {
-    font-size: 36px;
-    line-height: 1.2;
+  .internship-info h1 {
+    font-size: 2.8rem;
+    max-width: 100%;
   }
 
-  .internship-info > p {
-    font-size: 15px;
-  }
-
-  .benefits {
-    gap: 20px;
+  .application-form h2 {
+    font-size: 2.1rem;
   }
 
   .benefit {
-    margin-bottom: 25px;
     gap: 15px;
   }
 
@@ -380,10 +457,6 @@ textarea {
     padding: 35px 25px;
   }
 
-  .application-form h3 {
-    font-size: 28px;
-  }
-
   .form-grid {
     grid-template-columns: 1fr;
     gap: 18px;
@@ -395,7 +468,7 @@ textarea {
 }
 
 /* =========================================
-   SAMSUNG GALAXY S8+ (360px - 480px)
+   MOBILE
 ========================================= */
 
 @media screen and (max-width: 480px) {
@@ -419,17 +492,23 @@ textarea {
     border-radius: 20px;
   }
 
-  .internship-info h2 {
-    font-size: 28px;
-    line-height: 1.3;
+  .internship-info h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    max-width: 100%;
   }
 
-  .internship-info span {
-    font-size: 12px;
-    letter-spacing: 2px;
+  .application-form h2 {
+    font-size: 1.9rem;
+    line-height: 1.2;
   }
 
-  .internship-info > p {
+  .section-tag {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+  }
+
+  .internship-info > .internship-info-content > p {
     font-size: 14px;
     margin-bottom: 30px;
   }
@@ -439,8 +518,8 @@ textarea {
   }
 
   .benefit {
-    margin-bottom: 20px;
     gap: 12px;
+    padding: 16px;
     align-items: flex-start;
   }
 
@@ -453,7 +532,7 @@ textarea {
     border-radius: 12px;
   }
 
-  .benefit-content h4 {
+  .benefit-content h3 {
     font-size: 16px;
   }
 
@@ -464,11 +543,6 @@ textarea {
   .application-form {
     padding: 25px 18px;
     border-radius: 20px;
-  }
-
-  .application-form h3 {
-    font-size: 24px;
-    text-align: center;
   }
 
   .form-grid {

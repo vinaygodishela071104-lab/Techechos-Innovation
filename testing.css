@@ -5,6 +5,8 @@
   --glass: rgba(255, 255, 255, 0.08);
   --text: #1a1a1a;
   --bg: #ffffff;
+  --heading-font: "Space Grotesk", sans-serif;
+  --body-font: "Inter", sans-serif;
 }
 
 * {
@@ -14,9 +16,10 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--body-font);
   overflow-x: hidden;
 }
+
 img {
   max-width: 100%;
   height: auto;
@@ -36,6 +39,7 @@ section {
   padding-left: 15px;
   padding-right: 15px;
 }
+
 /*=========================
  HERO SECTION
 ==========================*/
@@ -48,7 +52,9 @@ section {
   filter: blur(80px);
   pointer-events: none;
   transform: translate(-50%, -50%);
+  z-index: 1;
 }
+
 .hero {
   min-height: 100vh;
   display: flex;
@@ -56,12 +62,12 @@ section {
   justify-content: center;
   position: relative;
   overflow: hidden;
-  background-color: var(--dark);
   padding: 100px 20px;
   text-align: center;
+  background:
+    linear-gradient(rgba(8, 8, 22, 0.78), rgba(8, 8, 22, 0.82)),
+    url("images/testing2.png") center/cover no-repeat;
 }
-
-/* Background Glow */
 
 .hero::before {
   content: "";
@@ -71,7 +77,7 @@ section {
   background: var(--primary);
   border-radius: 50%;
   filter: blur(250px);
-  opacity: 0.2;
+  opacity: 0.16;
   top: -250px;
   left: -150px;
   animation: moveGlow 10s infinite alternate;
@@ -85,7 +91,7 @@ section {
   background: var(--secondary);
   border-radius: 50%;
   filter: blur(250px);
-  opacity: 0.25;
+  opacity: 0.18;
   bottom: -200px;
   right: -100px;
   animation: moveGlow2 12s infinite alternate;
@@ -95,7 +101,6 @@ section {
   from {
     transform: translate(0, 0);
   }
-
   to {
     transform: translate(80px, 50px);
   }
@@ -105,13 +110,10 @@ section {
   from {
     transform: translate(0, 0);
   }
-
   to {
     transform: translate(-80px, -60px);
   }
 }
-
-/* Hero Content */
 
 .hero-content {
   max-width: 950px;
@@ -119,39 +121,49 @@ section {
   z-index: 2;
 }
 
-.hero-tag {
+.hero-tag,
+.section-tag {
   display: inline-block;
-  padding: 12px 24px;
-  border-radius: 50px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 18px;
+  padding: 8px 15px;
+  border-radius: 999px;
   color: var(--primary);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  margin-bottom: 25px;
+  border: 1px solid rgba(243, 150, 24, 0.28);
+  background: rgba(243, 150, 24, 0.08);
+  font-family: var(--body-font);
 }
 
 .hero-content h1 {
   color: #fff;
+  font-family: var(--heading-font);
   font-size: 3.5rem;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.15;
   margin-bottom: 25px;
 }
 
-.hero-content h1 span {
+.hero-content h1 span,
+.automation-content h2 span,
+.manual-container h2 span,
+.performance-content h2 span,
+.security-testing h2 span,
+.browser-container h2 span {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .hero-content p {
   max-width: 760px;
   margin: auto;
   color: rgba(255, 255, 255, 0.85);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.9;
 }
 
@@ -169,7 +181,6 @@ section {
   width: 90%;
   max-width: 1300px;
   margin: auto;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
@@ -183,37 +194,35 @@ section {
 }
 
 .automation-image img {
-  border-radius: 15px;
+  border-radius: 18px;
 }
 
-.section-tag {
-  color: var(--primary);
+.automation-content h2,
+.manual-container h2,
+.performance-content h2,
+.security-testing h2,
+.browser-container h2 {
+  font-family: var(--heading-font);
   font-size: 2.5rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-}
-
-.automation-content h2 {
-  font-size: 2.5rem;
+  font-weight: 500;
   color: #111;
   margin: 20px 0;
   line-height: 1.2;
 }
-.automation-content h2 span {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
-.automation-content p {
+.automation-content p,
+.manual-container p,
+.performance-content p,
+.section-intro {
   color: #666;
   line-height: 1.9;
   margin-bottom: 20px;
 }
 
+/* Feature Boxes */
+
 .automation-features {
   margin-top: 35px;
-
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 18px;
@@ -223,10 +232,8 @@ section {
   background: #fff;
   padding: 18px 20px;
   border-radius: 15px;
-  border-left: 5px solid var(--primary);
-
+  border: 1px solid rgba(17, 17, 17, 0.06);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-
   transition: 0.4s;
 }
 
@@ -241,6 +248,7 @@ section {
   -webkit-text-fill-color: transparent;
   margin-right: 10px;
 }
+
 /*=========================
  MANUAL TESTING
 ==========================*/
@@ -257,32 +265,8 @@ section {
   text-align: center;
 }
 
-.section-tag {
-  color: var(--primary);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 2px;
-}
-
-.manual-container h2 {
-  font-size: 2.5rem;
-  margin: 20px 0;
-  line-height: 1.2;
-  color: #111;
-}
-
-.manual-container p {
-  max-width: 900px;
-  margin: 0 auto 20px;
-  color: #666;
-  line-height: 1.9;
-}
-
-/* Feature Cards */
-
 .manual-features {
   margin-top: 60px;
-
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
@@ -292,9 +276,7 @@ section {
   background: #fff;
   padding: 35px;
   border-radius: 20px;
-
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-
   transition: 0.4s;
   position: relative;
   overflow: hidden;
@@ -303,11 +285,9 @@ section {
 .feature-card::before {
   content: "";
   position: absolute;
-  left: 0;
-  top: 0;
+  inset: 0 auto auto 0;
   width: 100%;
   height: 4px;
-
   background: linear-gradient(90deg, var(--secondary), var(--primary));
 }
 
@@ -317,135 +297,163 @@ section {
 }
 
 .feature-card h3 {
-  color: black;
+  color: #111;
   margin-bottom: 15px;
+  font-family: var(--heading-font);
+  font-weight: 500;
 }
 
 .feature-card p {
   margin: 0;
 }
-
 /*=========================
- PERFORMANCE TESTING
+  PERFORMANCE TESTING
 ==========================*/
 
 .performance-testing {
-  padding: 120px 0;
+  padding: clamp(80px, 10vw, 120px) 0;
   background: #fff;
+  overflow: hidden;
 }
 
 .performance-container {
-  width: 90%;
-  max-width: 1300px;
-  margin: auto;
-
+  width: min(90%, 1300px);
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+  gap: clamp(36px, 6vw, 80px);
   align-items: center;
 }
 
-/* Left Content */
+.performance-content .section-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
 
 .performance-content h2 {
-  font-size: 2.5rem;
-  line-height: 1.2;
-  margin: 20px 0;
-  color: #111;
+  max-width: 14ch;
+  margin-bottom: 22px;
 }
 
 .performance-content p {
+  max-width: 62ch;
   color: #666;
-  line-height: 1.9;
-  margin-bottom: 20px;
+  line-height: 1.85;
 }
 
-.section-tag {
-  color: var(--primary);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 2px;
+.performance-content p + p {
+  margin-top: 16px;
 }
 
-/* Right Timeline */
-
-.timeline {
-  position: relative;
-  padding-left: 50px;
+.performance-points {
+  display: grid;
+  gap: 14px;
+  margin-top: 28px;
 }
 
-.timeline::before {
-  content: "";
-  position: absolute;
-
-  left: 12px;
-  top: 0;
-
-  width: 4px;
-  height: 100%;
-
-  background: linear-gradient(to bottom, var(--secondary), var(--primary));
+.point-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #222;
+  font-weight: 500;
 }
 
-.timeline-item {
-  position: relative;
-  margin-bottom: 40px;
-}
-
-.timeline-dot {
-  position: absolute;
-
-  left: -50px;
-  top: 12px;
-
-  width: 28px;
-  height: 28px;
-
+.point-dot {
+  width: 11px;
+  height: 11px;
+  flex: 0 0 11px;
   border-radius: 50%;
-
-  background: #fff;
-  border: 4px solid var(--secondary);
-
-  transition: 0.4s;
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  box-shadow: 0 0 0 6px rgba(105, 23, 144, 0.08);
 }
 
-.timeline-content {
-  background: #fff;
-
-  padding: 25px 30px;
-
-  border-radius: 20px;
-
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
-
-  transition: 0.4s;
+.performance-visual {
+  position: relative;
 }
 
-.timeline-content h3 {
-  color: black;
-  margin-bottom: 10px;
+.visual-glow {
+  position: absolute;
+  inset: 8% 10% auto;
+  height: 78%;
+  border-radius: 32px;
+  background: radial-gradient(
+    circle at center,
+    rgba(105, 23, 144, 0.16),
+    rgba(105, 23, 144, 0.04) 45%,
+    transparent 72%
+  );
+  filter: blur(20px);
+  z-index: 0;
 }
 
-.timeline-content p {
+.performance-image-card {
+  position: relative;
+  z-index: 1;
+  padding: 18px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, #ffffff 0%, #faf7fd 100%);
+  border: 1px solid rgba(105, 23, 144, 0.08);
+  box-shadow:
+    0 24px 60px rgba(16, 24, 40, 0.08),
+    0 8px 24px rgba(105, 23, 144, 0.08);
+}
+
+.performance-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 22px;
+  object-fit: cover;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.floating-badge {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 150px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(105, 23, 144, 0.1);
+  box-shadow: 0 16px 35px rgba(21, 21, 21, 0.08);
+}
+
+.floating-badge strong {
+  color: #111;
+  font-size: 0.98rem;
+  line-height: 1.2;
+}
+
+.floating-badge span {
   color: #666;
-  margin: 0;
-  line-height: 1.8;
+  font-size: 0.88rem;
+  line-height: 1.4;
 }
 
-.timeline-item:hover .timeline-dot {
-  border-color: var(--primary);
-  transform: scale(1.2);
+.badge-top {
+  top: -18px;
+  right: -18px;
 }
 
-.timeline-item:hover .timeline-content {
-  transform: translateX(10px);
-
-  box-shadow: 0 20px 40px rgba(105, 23, 144, 0.12);
+.badge-middle {
+  left: -22px;
+  top: 42%;
 }
 
-/* =========================
-   SECURITY TESTING FLOW
-========================= */
+.badge-bottom {
+  right: 18px;
+  bottom: -18px;
+}
+
+/*=========================
+ SECURITY TESTING
+==========================*/
 
 .security-testing {
   padding: 120px 0;
@@ -459,29 +467,10 @@ section {
   margin: auto;
 }
 
-.section-tag {
-  display: block;
-  color: var(--primary);
-  font-size: 2.5rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  margin-bottom: 15px;
-}
-
-.security-testing h2 {
-  font-size: 3rem;
-  color: #111;
-  margin-bottom: 20px;
-}
-
 .section-intro {
   max-width: 850px;
   margin: 0 auto 80px;
-  color: #666;
-  line-height: 1.9;
 }
-
-/* FLOW LAYOUT */
 
 .security-flow {
   display: flex;
@@ -490,8 +479,6 @@ section {
   flex-wrap: wrap;
   gap: 25px;
 }
-
-/* ITEM */
 
 .flow-item {
   display: flex;
@@ -504,19 +491,14 @@ section {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-
   background: linear-gradient(135deg, var(--secondary), var(--primary));
-
   color: #fff;
   font-size: 20px;
   font-weight: 700;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   box-shadow: 0 10px 25px rgba(105, 23, 144, 0.25);
-
   transition: 0.4s;
 }
 
@@ -526,9 +508,9 @@ section {
   color: #333;
   max-width: 140px;
   text-align: center;
+  font-family: var(--heading-font);
+  font-weight: 500;
 }
-
-/* ARROW */
 
 .arrow {
   font-size: 22px;
@@ -536,14 +518,10 @@ section {
   animation: bounce 1.5s infinite;
 }
 
-/* HOVER */
-
 .flow-item:hover .circle {
   transform: scale(1.15);
   box-shadow: 0 15px 35px rgba(243, 150, 24, 0.35);
 }
-
-/* ANIMATION */
 
 @keyframes bounce {
   0%,
@@ -556,7 +534,7 @@ section {
 }
 
 /*=========================
- CROSS-BROWSER (LIGHT MODE)
+ CROSS-BROWSER
 ==========================*/
 
 .browser-support {
@@ -571,48 +549,17 @@ section {
   text-align: center;
 }
 
-/* Heading */
-
-.section-tag {
-  color: var(--primary);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  margin-bottom: 15px;
-  display: block;
-}
-
-.browser-container h2 {
-  font-size: 2.5rem;
-  color: #111;
-  margin-bottom: 20px;
-  line-height: 1.2;
-}
-
-.section-intro {
-  max-width: 850px;
-  margin: 0 auto 70px;
-  color: #666;
-  line-height: 1.9;
-}
-
-/* Grid */
-
 .browser-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
 
-/* Item */
-
 .browser-item {
   background: #fff;
   padding: 25px;
   border-radius: 18px;
-
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-
   transition: 0.4s;
 }
 
@@ -620,8 +567,6 @@ section {
   transform: translateY(-6px);
   box-shadow: 0 20px 40px rgba(105, 23, 144, 0.12);
 }
-
-/* Header */
 
 .browser-head {
   display: flex;
@@ -638,8 +583,6 @@ section {
   color: var(--secondary);
 }
 
-/* Progress Bar */
-
 .bar {
   width: 100%;
   height: 8px;
@@ -648,8 +591,6 @@ section {
   overflow: hidden;
 }
 
-/* fills */
-
 .fill {
   height: 100%;
   border-radius: 50px;
@@ -657,375 +598,37 @@ section {
   animation: load 2s forwards;
 }
 
-.chrome {
+.chrome,
+.firefox,
+.safari,
+.edge,
+.opera,
+.mobile {
   background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.chrome {
   width: 99%;
 }
 .firefox {
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
   width: 97%;
 }
 .safari {
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
   width: 96%;
 }
 .edge {
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
   width: 98%;
 }
 .opera {
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
   width: 95%;
 }
 .mobile {
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
   width: 98%;
 }
 
 @keyframes load {
   from {
     width: 0;
-  }
-}
-/* ==========================================
-   iPad Pro (1024px - 1366px)
-========================================== */
-
-@media screen and (max-width: 1366px) {
-  .hero-content {
-    max-width: 900px;
-  }
-
-  .hero-content h1 {
-    font-size: 4rem;
-    line-height: 1.2;
-  }
-
-  .automation-container,
-  .performance-container {
-    gap: 50px;
-  }
-
-  .manual-features {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .browser-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .timeline {
-    padding-left: 40px;
-  }
-
-  .timeline-dot {
-    left: -42px;
-  }
-}
-/* ==========================================
-   iPad Mini (768px)
-========================================== */
-
-@media screen and (max-width: 768px) {
-  section {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  /* HERO */
-
-  .hero {
-    min-height: 100vh;
-    padding: 120px 25px 80px;
-  }
-
-  .hero-content {
-    max-width: 100%;
-  }
-
-  .hero-content h1 {
-    font-size: 3rem;
-    line-height: 1.25;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
-
-  /* AUTOMATION */
-
-  .automation-container {
-    width: 100%;
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .automation-content {
-    text-align: center;
-  }
-
-  .automation-image img {
-    max-width: 500px;
-    margin: auto;
-  }
-
-  .automation-features {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .feature-box {
-    width: 100%;
-    padding: 18px;
-    text-align: left;
-  }
-
-  /* MANUAL */
-
-  .manual-features {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  /* PERFORMANCE */
-
-  .performance-container {
-    width: 100%;
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .performance-content {
-    text-align: center;
-  }
-
-  .timeline {
-    padding-left: 35px;
-  }
-
-  .timeline-dot {
-    left: -36px;
-  }
-
-  /* SECURITY */
-
-  .security-flow {
-    justify-content: center;
-    gap: 18px;
-  }
-
-  /* BROWSER */
-
-  .browser-grid {
-    grid-template-columns: 1fr;
-  }
-}
-/* ==========================================
-   Samsung Galaxy S8+ (360px)
-========================================== */
-section {
-  padding-left: 15px;
-  padding-right: 20px;
-}
-
-@media screen and (max-width: 380px) {
-  body {
-    overflow-x: hidden;
-  }
-
-  /* HERO */
-
-  .hero {
-    min-height: 100vh;
-    padding: 110px 20px 70px;
-  }
-
-  .hero-content {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .hero-tag {
-    font-size: 11px;
-    padding: 8px 16px;
-    margin-bottom: 15px;
-  }
-
-  .hero-content h1 {
-    width: 100%;
-    max-width: 100%;
-    font-size: 1.9rem;
-    line-height: 1.3;
-    margin-bottom: 15px;
-
-    white-space: normal;
-    overflow: visible;
-    word-break: normal;
-    overflow-wrap: normal;
-  }
-
-  .hero-content p {
-    font-size: 0.95rem;
-    line-height: 1.8;
-  }
-
-  .hero::before {
-    width: 280px;
-    height: 280px;
-    top: -100px;
-    left: -120px;
-    filter: blur(120px);
-  }
-
-  .hero::after {
-    width: 250px;
-    height: 250px;
-    right: -120px;
-    bottom: -100px;
-    filter: blur(120px);
-  }
-
-  /* HEADINGS */
-
-  .automation-content h2,
-  .manual-container h2,
-  .performance-content h2,
-  .security-testing h2,
-  .browser-container h2 {
-    font-size: 2rem;
-    line-height: 1.3;
-    text-align: center;
-  }
-
-  /* AUTOMATION */
-
-  .automation-section {
-    padding: 70px 0;
-  }
-
-  .automation-container {
-    width: 100%;
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
-
-  .automation-content {
-    text-align: center;
-  }
-
-  .automation-image img {
-    width: 100%;
-  }
-
-  .automation-features {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .feature-box {
-    width: 100%;
-    padding: 18px;
-    text-align: left;
-  }
-
-  /* MANUAL */
-
-  .manual-testing {
-    padding: 70px 0;
-  }
-
-  .manual-features {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .feature-card {
-    padding: 25px 20px;
-  }
-
-  /* PERFORMANCE */
-
-  .performance-testing {
-    padding: 70px 0;
-  }
-
-  .performance-container {
-    width: 100%;
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
-
-  .performance-content {
-    text-align: center;
-  }
-
-  .timeline {
-    padding-left: 28px;
-  }
-
-  .timeline::before {
-    left: 7px;
-  }
-
-  .timeline-dot {
-    width: 18px;
-    height: 18px;
-    left: -28px;
-    top: 18px;
-  }
-
-  .timeline-content {
-    padding: 18px;
-  }
-
-  .timeline-item:hover .timeline-content {
-    transform: none;
-  }
-
-  /* SECURITY */
-
-  .security-testing {
-    padding: 70px 0;
-  }
-
-  .section-intro {
-    margin-bottom: 40px;
-  }
-
-  .security-flow {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .arrow {
-    transform: rotate(90deg);
-    animation: none;
-  }
-
-  .circle {
-    width: 55px;
-    height: 55px;
-  }
-
-  /* BROWSER */
-
-  .browser-support {
-    padding: 70px 0;
-  }
-
-  .browser-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .browser-item {
-    padding: 20px;
-  }
-
-  .browser-head {
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
   }
 }
 
@@ -1039,20 +642,16 @@ body.dark-mode {
   --dark: #05050c;
 }
 
-/* Global */
-
 body.dark-mode {
   background: var(--bg);
   color: var(--text);
 }
 
-/* Hero */
-
 body.dark-mode .hero {
-  background: #05050c;
+  background:
+    linear-gradient(rgba(5, 5, 12, 0.82), rgba(5, 5, 12, 0.86)),
+    url("images/testing-hero.jpg") center/cover no-repeat;
 }
-
-/* Automated Testing */
 
 body.dark-mode .automation-section,
 body.dark-mode .performance-testing,
@@ -1077,20 +676,15 @@ body.dark-mode .feature-card p {
   color: rgba(255, 255, 255, 0.75);
 }
 
-/* Feature Boxes */
-
 body.dark-mode .feature-box {
   background: #151523;
-  border-left-color: var(--primary);
-
+  border: 1px solid rgba(255, 255, 255, 0.06);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 body.dark-mode .feature-box:hover {
   box-shadow: 0 15px 35px rgba(243, 150, 24, 0.15);
 }
-
-/* Manual Testing */
 
 body.dark-mode .manual-testing,
 body.dark-mode .browser-support {
@@ -1099,7 +693,6 @@ body.dark-mode .browser-support {
 
 body.dark-mode .feature-card {
   background: #151523;
-
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
@@ -1107,11 +700,8 @@ body.dark-mode .feature-card h3 {
   color: var(--primary);
 }
 
-/* Timeline */
-
 body.dark-mode .timeline-content {
   background: #151523;
-
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
@@ -1123,8 +713,6 @@ body.dark-mode .timeline-dot {
   background: #151523;
 }
 
-/* Security Flow */
-
 body.dark-mode .flow-item h3 {
   color: #ffffff;
 }
@@ -1133,11 +721,8 @@ body.dark-mode .circle {
   box-shadow: 0 10px 25px rgba(243, 150, 24, 0.2);
 }
 
-/* Browser Support */
-
 body.dark-mode .browser-item {
   background: #151523;
-
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
@@ -1149,15 +734,11 @@ body.dark-mode .bar {
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* Hover Effects */
-
 body.dark-mode .browser-item:hover,
 body.dark-mode .feature-card:hover,
 body.dark-mode .timeline-content:hover {
   box-shadow: 0 15px 40px rgba(243, 150, 24, 0.12);
 }
-
-/* Scrollbar */
 
 body.dark-mode::-webkit-scrollbar {
   width: 8px;
@@ -1170,4 +751,597 @@ body.dark-mode::-webkit-scrollbar-track {
 body.dark-mode::-webkit-scrollbar-thumb {
   background: var(--primary);
   border-radius: 20px;
+}
+/*=========================
+  PERFORMANCE TESTING
+  DARK MODE
+==========================*/
+
+body.dark-mode .performance-testing {
+  background: #121212;
+}
+
+/* Left Side Content */
+body.dark-mode .performance-content h2 {
+  color: #ffffff;
+}
+
+body.dark-mode .performance-content p {
+  color: #b8b8b8;
+}
+
+/* Bullet Points */
+body.dark-mode .point-item {
+  color: #eeeeee;
+}
+
+body.dark-mode .point-dot {
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+
+  box-shadow:
+    0 0 0 6px rgba(105, 23, 144, 0.16),
+    0 0 12px rgba(105, 23, 144, 0.25);
+}
+
+/* Visual Glow */
+body.dark-mode .visual-glow {
+  background: radial-gradient(
+    circle at center,
+    rgba(105, 23, 144, 0.28),
+    rgba(105, 23, 144, 0.08) 45%,
+    transparent 72%
+  );
+}
+
+/* Image Wrapper / Card */
+body.dark-mode .performance-image-card {
+  background: linear-gradient(180deg, #1c1c1c 0%, #17121b 100%);
+
+  border: 1px solid rgba(180, 80, 220, 0.18);
+
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.45),
+    0 8px 24px rgba(105, 23, 144, 0.18);
+}
+
+/* Main Image */
+body.dark-mode .performance-image {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Floating Badges */
+body.dark-mode .floating-badge {
+  background: rgba(28, 28, 28, 0.94);
+
+  border: 1px solid rgba(180, 80, 220, 0.18);
+
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.45);
+}
+
+/* Badge Heading */
+body.dark-mode .floating-badge strong {
+  color: #ffffff;
+}
+
+/* Badge Description */
+body.dark-mode .floating-badge span {
+  color: #b5b5b5;
+}
+/* ==========================================================================
+   RESPONSIVE ALIGNMENT — YOUR 4 BREAKPOINTS (NO CONFLICTS)
+   ========================================================================== */
+
+/* ----------------------------------
+   Samsung Galaxy S8+  (≤ 480px)
+   ---------------------------------- */
+@media screen and (max-width: 480px) {
+  /* Hero: keep centered, prevent overflow */
+  .hero {
+    padding: 70px 16px 60px;
+    min-height: auto;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 1.85rem;
+    line-height: 1.2;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    max-width: 100%;
+  }
+
+  /* Sections: keep internal alignment consistent */
+  .automation-section,
+  .manual-testing,
+  .performance-testing,
+  .security-testing,
+  .browser-support {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  /* Automation: stack columns, center-align text */
+  .automation-container {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .automation-content {
+    text-align: center;
+  }
+
+  .automation-content h2 {
+    font-size: 1.65rem;
+  }
+
+  .automation-features {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* Manual: 1 column, centered cards */
+  .manual-features {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .feature-card {
+    padding: 22px 18px;
+  }
+
+  /* Performance: stack, center points list */
+  .performance-container {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .performance-content {
+    text-align: center;
+  }
+
+  .performance-content h2,
+  .performance-content p {
+    max-width: 100%;
+  }
+
+  .performance-points {
+    max-width: 100%;
+    margin-top: 22px;
+    gap: 12px;
+  }
+
+  .point-item {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .performance-image-card {
+    padding: 12px;
+    border-radius: 20px;
+    display: grid;
+    gap: 12px;
+  }
+
+  .performance-image {
+    border-radius: 14px;
+  }
+
+  .floating-badge {
+    position: static;
+    min-width: auto;
+    padding: 12px 14px;
+    border-radius: 14px;
+  }
+
+  .visual-glow {
+    inset: 10% 4% auto;
+    height: 68%;
+    border-radius: 24px;
+  }
+
+  /* Security: vertical flow, centered */
+  .security-flow {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .arrow {
+    transform: rotate(90deg);
+  }
+
+  .circle {
+    width: 52px;
+    height: 52px;
+    font-size: 17px;
+  }
+
+  .flow-item h3 {
+    font-size: 0.92rem;
+    max-width: 160px;
+  }
+
+  /* Browser: 1 column, left-aligned labels */
+  .browser-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .browser-item {
+    padding: 18px 16px;
+  }
+
+  .browser-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+/* ----------------------------------
+   iPad Mini  (768px – 820px)
+   ---------------------------------- */
+@media screen and (min-width: 768px) and (max-width: 820px) {
+  .hero {
+    padding: 90px 24px 75px;
+    min-height: auto;
+  }
+
+  .hero-content {
+    max-width: 720px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    line-height: 1.85;
+    max-width: 660px;
+  }
+
+  .automation-section,
+  .manual-testing,
+  .performance-testing,
+  .security-testing,
+  .browser-support {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .automation-container,
+  .performance-container {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .automation-content,
+  .performance-content {
+    text-align: center;
+  }
+
+  .automation-content h2,
+  .manual-container h2,
+  .performance-content h2,
+  .security-testing h2,
+  .browser-container h2 {
+    font-size: 1.95rem;
+  }
+
+  .automation-features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .manual-features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .feature-card {
+    padding: 26px 20px;
+  }
+
+  .performance-content h2,
+  .performance-content p {
+    max-width: 100%;
+  }
+
+  .performance-points {
+    max-width: 620px;
+    margin: 22px auto 0;
+  }
+
+  .point-item {
+    justify-content: center;
+  }
+
+  .performance-image-card {
+    padding: 14px;
+    border-radius: 22px;
+  }
+
+  .performance-image {
+    border-radius: 16px;
+  }
+
+  .floating-badge {
+    min-width: 125px;
+    padding: 12px 13px;
+  }
+
+  .badge-top {
+    top: 10px;
+    right: 10px;
+  }
+
+  .badge-middle {
+    left: 10px;
+    top: auto;
+    bottom: 80px;
+  }
+
+  .badge-bottom {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .security-flow {
+    gap: 18px;
+  }
+
+  .browser-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* ----------------------------------
+   iPad Pro 11"  (821px – 1024px)
+   ---------------------------------- */
+@media screen and (min-width: 821px) and (max-width: 1024px) {
+  .hero {
+    padding: 95px 28px 80px;
+    min-height: auto;
+  }
+
+  .hero-content {
+    max-width: 780px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.75rem;
+  }
+
+  .hero-content p {
+    max-width: 700px;
+  }
+
+  .automation-section,
+  .manual-testing,
+  .performance-testing,
+  .security-testing,
+  .browser-support {
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
+
+  .automation-container,
+  .performance-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 34px;
+  }
+
+  .automation-content h2,
+  .manual-container h2,
+  .performance-content h2,
+  .security-testing h2,
+  .browser-container h2 {
+    font-size: 2.05rem;
+  }
+
+  .automation-features {
+    gap: 16px;
+  }
+
+  .manual-features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .feature-card {
+    padding: 28px 22px;
+  }
+
+  .performance-content h2,
+  .performance-content p {
+    max-width: 100%;
+  }
+
+  .performance-image-card {
+    padding: 14px;
+    border-radius: 22px;
+  }
+
+  .performance-image {
+    border-radius: 16px;
+  }
+
+  .floating-badge {
+    min-width: 122px;
+    padding: 12px 13px;
+  }
+
+  .badge-top {
+    top: 8px;
+    right: 8px;
+  }
+
+  .badge-middle {
+    left: 8px;
+    top: auto;
+    bottom: 76px;
+  }
+
+  .badge-bottom {
+    right: 8px;
+    bottom: 8px;
+  }
+
+  .security-flow {
+    gap: 18px;
+  }
+
+  .browser-grid {
+    gap: 20px;
+  }
+}
+
+/* ----------------------------------
+   Nest Hub  (1024px × 600px)
+   ---------------------------------- */
+@media screen and (width: 1024px) and (height: 600px) {
+  .hero {
+    min-height: 600px;
+    padding: 64px 24px 52px;
+  }
+
+  .hero-content {
+    max-width: 740px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.25rem;
+    margin-bottom: 14px;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 620px;
+  }
+
+  .automation-section,
+  .manual-testing,
+  .performance-testing,
+  .security-testing,
+  .browser-support {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .automation-container,
+  .performance-container {
+    gap: 26px;
+  }
+
+  .automation-content h2,
+  .manual-container h2,
+  .performance-content h2,
+  .security-testing h2,
+  .browser-container h2 {
+    font-size: 1.85rem;
+    margin: 12px 0;
+  }
+
+  .automation-features {
+    gap: 14px;
+    margin-top: 22px;
+  }
+
+  .manual-features {
+    margin-top: 32px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .feature-card {
+    padding: 22px 18px;
+  }
+
+  .performance-points {
+    margin-top: 18px;
+    gap: 10px;
+  }
+
+  .point-item {
+    font-size: 0.92rem;
+  }
+
+  .performance-image-card {
+    padding: 12px;
+    border-radius: 20px;
+  }
+
+  .performance-image {
+    border-radius: 14px;
+  }
+
+  .floating-badge {
+    min-width: 112px;
+    padding: 10px 12px;
+    border-radius: 14px;
+  }
+
+  .floating-badge strong {
+    font-size: 0.84rem;
+  }
+
+  .floating-badge span {
+    font-size: 0.74rem;
+  }
+
+  .badge-top {
+    top: 8px;
+    right: 8px;
+  }
+
+  .badge-middle {
+    left: 8px;
+    top: auto;
+    bottom: 66px;
+  }
+
+  .badge-bottom {
+    right: 8px;
+    bottom: 8px;
+  }
+
+  .security-flow {
+    gap: 14px;
+  }
+
+  .circle {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .flow-item h3 {
+    font-size: 0.86rem;
+    max-width: 96px;
+    margin-top: 9px;
+  }
+
+  .arrow {
+    font-size: 17px;
+  }
+
+  .browser-grid {
+    gap: 16px;
+  }
+
+  .browser-item {
+    padding: 16px 15px;
+  }
+
+  .browser-head {
+    margin-bottom: 11px;
+  }
 }

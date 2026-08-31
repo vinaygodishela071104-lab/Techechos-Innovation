@@ -6,8 +6,11 @@
     <title>Services</title>
 
     <link rel="stylesheet" href="services.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -21,23 +24,19 @@
 
   <body>
     <div id="navbar"></div>
+
     <section class="services-hero">
-      <div class="glow"></div>
-      <div class="hero-grid"></div>
+      <div class="hero-overlay"></div>
 
       <div class="hero-container">
-        <!-- LEFT -->
-
         <div class="hero-content reveal">
-          <div class="hero-badge">
+          <span class="section-tag">
             <i class="fa-solid fa-wand-magic-sparkles"></i>
             Future-Ready IT Solutions
-          </div>
+          </span>
 
           <h1>
-            Engineering the
-            <span>Next Generation</span>
-            of Digital Experiences
+            Engineering the <span>Next Generation</span> of Digital Experiences
           </h1>
 
           <p>
@@ -47,183 +46,192 @@
           </p>
 
           <div class="hero-buttons">
-            <a href="service.html" class="btn btn-primary">
-              Explore Services
-            </a>
-
-            <a href="contact.html" class="btn btn-outline"> Let's Talk </a>
-          </div>
-        </div>
-
-        <!-- RIGHT -->
-
-        <div class="hero-visual">
-          <div class="service-card1 card-1">
-            <div class="service-icon">
-              <i class="fa-solid fa-code"></i>
-            </div>
-
-            <h3>Custom Software</h3>
-
-            <p>
-              Tailored applications engineered for scalability, security, and
-              performance.
-            </p>
-          </div>
-
-          <div class="service-card1 card-2">
-            <div class="service-icon">
-              <i class="fa-solid fa-vial-circle-check"></i>
-            </div>
-
-            <h3>Testing Services</h3>
-
-            <p>
-              Comprehensive QA processes including functional, performance, and
-              security testing to ensure flawless digital experiences.
-            </p>
-          </div>
-
-          <div class="service-card1 card-3">
-            <div class="service-icon">
-              <i class="fa-solid fa-headset"></i>
-            </div>
-
-            <h3>Technical Support</h3>
-
-            <p>
-              Reliable post-launch assistance, proactive monitoring, and
-              maintenance to keep your systems running smoothly.
-            </p>
+            <a href="service.html" class="btn btn-primary">Explore Services</a>
+            <a href="contact.html" class="btn btn-outline">Let's Talk</a>
           </div>
         </div>
       </div>
     </section>
 
     <section class="services-overview">
-      <div class="section-header reveal">
-        <span class="section-badge">
-          <i class="fa-solid fa-briefcase"></i>
-          What We Offer
-        </span>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">
+            <i class="fa-solid fa-briefcase"></i>
+            What We Offer
+          </span>
 
-        <h2>Comprehensive Services for <span>Modern Businesses</span></h2>
+          <h2>Comprehensive Services for <span>Modern Businesses</span></h2>
 
-        <p>
-          We deliver innovative solutions that help businesses grow, streamline
-          operations, and create exceptional digital experiences.
-        </p>
-      </div>
-
-      <div class="services-grid">
-        <div class="service-card reveal">
-          <div class="service-icon1"><i class="fa-solid fa-globe"></i></div>
-          <h3>Web Development</h3>
-          <p>High-performance websites built for your business.</p>
-          <div class="features">
-            <span>Responsive</span><span>SEO</span><span>Secure</span>
-          </div>
-          <a href="web.html" class="service-btn">
-            Explore Service
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
+          <p>
+            We deliver innovative solutions that help businesses grow,
+            streamline operations, and create exceptional digital experiences.
+          </p>
         </div>
 
-        <div class="service-card reveal">
-          <div class="service-icon1">
-            <i class="fa-solid fa-mobile-screen-button"></i>
-          </div>
-          <h3>App Development</h3>
-          <p>
-            Scalable Android and iOS applications with seamless user
-            experiences.
-          </p>
-          <div class="features">
-            <span>Android</span><span>iOS</span><span>User Friendly</span>
-          </div>
-          <a href="app.html" class="service-btn">
-            Explore Service
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-image-wrap">
+              <img
+                src="images/website.png"
+                alt="Modern business website design interface"
+              />
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon1"><i class="fa-solid fa-globe"></i></div>
+              <h3>Web Development</h3>
+              <p>High-performance websites built for your business.</p>
+              <div class="features">
+                <span>Responsive</span><span>SEO</span><span>Secure</span>
+              </div>
+              <a href="web.html" class="service-btn">
+                Explore Service
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
 
-        <div class="service-card reveal">
-          <div class="service-icon1">
-            <i class="fa-solid fa-vial-circle-check"></i>
-          </div>
-          <h3>Testing Services</h3>
-          <p>
-            Comprehensive QA and testing solutions to ensure quality and
-            reliability.
-          </p>
-          <div class="features">
-            <span>QA</span><span>Performance</span><span>Reliability</span>
-          </div>
-          <a href="testing.html" class="service-btn">
-            Explore Service
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
+          <article class="service-card reveal">
+            <div class="service-image-wrap">
+              <img
+                src="images/app.png"
+                alt="Mobile application interface on smartphone screens"
+              />
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon1">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+              </div>
+              <h3>App Development</h3>
+              <p>
+                Scalable Android and iOS applications with seamless user
+                experiences.
+              </p>
+              <div class="features">
+                <span>Android</span><span>iOS</span><span>User Friendly</span>
+              </div>
+              <a href="app.html" class="service-btn">
+                Explore Service
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
 
-        <div class="service-card reveal">
-          <div class="service-icon1"><i class="fa-solid fa-headset"></i></div>
-          <h3>Technical Support</h3>
-          <p>
-            24/7 expert technical assistance to keep your systems running
-            smoothly.
-          </p>
-          <div class="features">
-            <span>24/7</span><span>Maintenance</span><span>Support</span>
-          </div>
-          <a href="technical.html" class="service-btn">
-            Explore Service
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
+          <article class="service-card reveal">
+            <div class="service-image-wrap">
+              <img
+                src="images/testing service.png"
+                alt="Software testing and quality assurance workflow"
+              />
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon1">
+                <i class="fa-solid fa-vial-circle-check"></i>
+              </div>
+              <h3>Testing Services</h3>
+              <p>
+                Comprehensive QA and testing solutions to ensure quality and
+                reliability.
+              </p>
+              <div class="features">
+                <span>QA</span><span>Performance</span><span>Reliability</span>
+              </div>
+              <a href="testing.html" class="service-btn">
+                Explore Service
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
 
-        <div class="service-card reveal">
-          <div class="service-icon1">
-            <i class="fa-solid fa-notes-medical"></i>
-          </div>
-          <h3>Medical Coding</h3>
-          <p>
-            Accurate and efficient coding services that support healthcare
-            operations.
-          </p>
-          <div class="features">
-            <span>Accuracy</span><span>Efficiency</span><span>Healthcare</span>
-          </div>
-          <a href="medical.html" class="service-btn">
-            Explore Service
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
+          <article class="service-card reveal">
+            <div class="service-image-wrap">
+              <img
+                src="images/techinacal.png"
+                alt="Support desk helping maintain technical systems"
+              />
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon1">
+                <i class="fa-solid fa-headset"></i>
+              </div>
+              <h3>Technical Support</h3>
+              <p>
+                24/7 expert technical assistance to keep your systems running
+                smoothly.
+              </p>
+              <div class="features">
+                <span>24/7</span><span>Maintenance</span><span>Support</span>
+              </div>
+              <a href="technical.html" class="service-btn">
+                Explore Service
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
 
-        <div class="service-card reveal">
-          <div class="service-icon1">
-            <i class="fa-solid fa-book-open-reader"></i>
-          </div>
-          <h3>EPUB Conversions</h3>
-          <p>
-            Professional digital publishing and conversion services for modern
-            readers.
-          </p>
-          <div class="features">
-            <span>Publishing</span><span>Digital</span><span>Conversion</span>
-          </div>
-          <a href="epub.html" class="service-btn">
-            Explore Service
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
+          <article class="service-card reveal">
+            <div class="service-image-wrap">
+              <img
+                src="images/medical.png"
+                alt="Healthcare coding and digital records interface"
+              />
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon1">
+                <i class="fa-solid fa-notes-medical"></i>
+              </div>
+              <h3>Medical Coding</h3>
+              <p>
+                Accurate and efficient coding services that support healthcare
+                operations.
+              </p>
+              <div class="features">
+                <span>Accuracy</span><span>Efficiency</span
+                ><span>Healthcare</span>
+              </div>
+              <a href="medical.html" class="service-btn">
+                Explore Service
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-image-wrap">
+              <img
+                src="images/epub.png"
+                alt="Digital publishing and ebook conversion workspace"
+              />
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon1">
+                <i class="fa-solid fa-book-open-reader"></i>
+              </div>
+              <h3>EPUB Conversions</h3>
+              <p>
+                Professional digital publishing and conversion services for
+                modern readers.
+              </p>
+              <div class="features">
+                <span>Publishing</span><span>Digital</span
+                ><span>Conversion</span>
+              </div>
+              <a href="epub.html" class="service-btn">
+                Explore Service
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
+
     <section class="challenge-solution">
-      <div class="challenge-wrap">
+      <div class="container challenge-wrap">
         <div class="challenge-head reveal">
-          <span class="challenge-badge">
+          <span class="section-tag">
             <i class="fa-solid fa-bolt"></i>
-            Challenge → Solution
+            Challenge to Solution
           </span>
 
           <h2>
@@ -232,120 +240,87 @@
           </h2>
 
           <p>
-            Modern businesses often struggle with disconnected systems, slow
-            delivery cycles, poor user journeys, and limited technical
-            visibility. We transform those friction points into scalable,
-            measurable, and future-ready solutions.
+            We transform fragmented workflows, delivery delays, and technical
+            uncertainty into structured and scalable service experiences.
           </p>
         </div>
 
-        <div class="challenge-grid">
-          <div class="challenge-left">
-            <div class="pain-item reveal">
-              <span class="pain-number">01</span>
-              <div class="pain-content">
-                <h3>Fragmented workflows</h3>
-                <p>
-                  Teams rely on disconnected tools, manual approvals, and
-                  repetitive processes that reduce efficiency and delay
-                  execution.
-                </p>
-              </div>
+        <div class="challenge-layout">
+          <div class="challenge-media reveal-left">
+            <div class="challenge-image-card">
+              <img
+                src="images/transformation.png"
+                alt="Business team discussing digital transformation strategy"
+              />
             </div>
 
-            <div class="pain-item reveal">
-              <span class="pain-number">02</span>
-              <div class="pain-content">
-                <h3>Slow product delivery</h3>
-                <p>
-                  Legacy systems and unclear technical planning often lead to
-                  missed deadlines, rework, and difficulty scaling new digital
-                  initiatives.
-                </p>
+            <div class="challenge-mini-grid">
+              <div class="mini-info-card">
+                <img
+                  src="images/workflow.png"
+                  alt="Workflow planning board and project mapping"
+                />
+                <div>
+                  <h4>Workflow clarity</h4>
+                  <p>Connected systems and simpler operations.</p>
+                </div>
               </div>
-            </div>
 
-            <div class="pain-item reveal">
-              <span class="pain-number">03</span>
-              <div class="pain-content">
-                <h3>Weak user experience</h3>
-                <p>
-                  Interfaces may function technically, but poor usability, low
-                  clarity, and inconsistent journeys reduce engagement and
-                  trust.
-                </p>
-              </div>
-            </div>
-
-            <div class="pain-item reveal">
-              <span class="pain-number">04</span>
-              <div class="pain-content">
-                <h3>Lack of technical confidence</h3>
-                <p>
-                  Businesses need solutions that are secure, maintainable, and
-                  ready for growth without creating long-term dependency or
-                  instability.
-                </p>
+              <div class="mini-info-card">
+                <img
+                  src="images/user.png"
+                  alt="User interface review and testing session"
+                />
+                <div>
+                  <h4>Experience quality</h4>
+                  <p>Usable journeys shaped for real users.</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="challenge-right">
-            <div class="solution-panel reveal-right">
-              <span class="solution-kicker">Our response</span>
-
-              <h3>
-                We design systems that simplify operations and strengthen
-                digital performance.
-              </h3>
-
-              <p>
-                Instead of applying one-size-fits-all development, we align
-                strategy, design, engineering, testing, and support around your
-                business goals. The result is a cleaner product experience,
-                smoother operations, and a stronger foundation for long-term
-                growth.
-              </p>
-
-              <div class="solution-points">
-                <div class="solution-point">
-                  <i class="fa-solid fa-diagram-project"></i>
-                  <div>
-                    <h4>Structured architecture</h4>
-                    <p>
-                      Scalable systems planned for performance, integration, and
-                      future expansion.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="solution-point">
-                  <i class="fa-solid fa-layer-group"></i>
-                  <div>
-                    <h4>Unified delivery</h4>
-                    <p>
-                      Design, development, QA, and support connected through one
-                      workflow.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="solution-point">
-                  <i class="fa-solid fa-shield-halved"></i>
-                  <div>
-                    <h4>Reliable execution</h4>
-                    <p>
-                      Quality-focused implementation with testing, monitoring,
-                      and post-launch care.
-                    </p>
-                  </div>
-                </div>
+          <div class="challenge-content reveal-right">
+            <div class="challenge-stack">
+              <div class="challenge-card">
+                <span class="stack-label">Common challenges</span>
+                <ul>
+                  <li>Disconnected tools and repetitive manual processes</li>
+                  <li>Slow releases caused by unclear planning</li>
+                  <li>Weak usability and inconsistent digital journeys</li>
+                  <li>Low confidence in long-term technical stability</li>
+                </ul>
               </div>
 
-              <a href="#" class="solution-btn">
-                Discuss Your Challenges
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
+              <div class="solution-card">
+                <span class="stack-label">Our solution</span>
+                <h3>
+                  We build a delivery model that aligns planning, design,
+                  engineering, and support.
+                </h3>
+                <p>
+                  Instead of treating service delivery as isolated work, we
+                  connect structure, execution, quality checks, and post-launch
+                  continuity into one experience that is easier to trust and
+                  scale.
+                </p>
+
+                <div class="solution-points">
+                  <div class="solution-point">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <div>
+                      <h4>Structured architecture</h4>
+                      <p>
+                        Scalable foundations planned for growth and performance.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <a href="contact.html" class="solution-btn">
+                  Discuss Your Challenges
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -353,9 +328,9 @@
     </section>
 
     <section class="included-showcase">
-      <div class="included-wrap">
+      <div class="container">
         <div class="included-head reveal">
-          <span class="included-badge">
+          <span class="section-tag">
             <i class="fa-solid fa-box-open"></i>
             What’s Included
           </span>
@@ -375,7 +350,7 @@
         <div class="included-layout">
           <div class="included-main">
             <article class="included-feature feature-large reveal">
-              <div class="included-label">Core Delivery</div>
+              <span class="section-tag section-tag-dark">Core Delivery</span>
               <h3>
                 Strategy, execution, and technical clarity in one workflow
               </h3>
@@ -420,28 +395,28 @@
 
           <div class="included-side">
             <div class="scope-panel reveal-right">
-              <span class="scope-kicker">Included Deliverables</span>
+              <span class="section-tag">Included Deliverables</span>
 
               <ul class="scope-list">
                 <li>
-                  <i class="fa-solid fa-check"></i>
-                  Requirement discovery and solution planning
+                  <i class="fa-solid fa-check"></i>Requirement discovery and
+                  solution planning
                 </li>
                 <li>
-                  <i class="fa-solid fa-check"></i>
-                  Interface structure and visual direction
+                  <i class="fa-solid fa-check"></i>Interface structure and
+                  visual direction
                 </li>
                 <li>
-                  <i class="fa-solid fa-check"></i>
-                  Frontend or product development execution
+                  <i class="fa-solid fa-check"></i>Frontend or product
+                  development execution
                 </li>
                 <li>
-                  <i class="fa-solid fa-check"></i>
-                  QA review and performance checks
+                  <i class="fa-solid fa-check"></i>QA review and performance
+                  checks
                 </li>
                 <li>
-                  <i class="fa-solid fa-check"></i>
-                  Launch assistance and post-delivery guidance
+                  <i class="fa-solid fa-check"></i>Launch assistance and
+                  post-delivery guidance
                 </li>
               </ul>
 
@@ -484,95 +459,114 @@
         </div>
       </div>
     </section>
+
     <section class="journey-flow">
-      <div class="journey-flow-wrap">
+      <div class="container">
         <div class="journey-flow-head reveal">
-          <span>Client Journey Map</span>
-          <h2>
-            How We Move Your Project from <strong>Vision to Delivery</strong>
-          </h2>
+          <span class="section-tag">Client Journey Map</span>
+          <h2>How We Move Your Project from <span>Vision to Delivery</span></h2>
           <p>
             Every project follows a clear path shaped around discovery,
             planning, execution, review, and post-launch continuity.
           </p>
         </div>
 
-        <div class="journey-flow-body">
-          <div class="journey-line"></div>
-
-          <div class="journey-row row-left reveal">
-            <div class="journey-count">01</div>
-            <div class="journey-text">
-              <small>Discovery</small>
+        <div class="timeline-cards">
+          <article class="timeline-card reveal">
+            <div class="timeline-thumb">
+              <img
+                src="images/discovery.png"
+                alt="Discovery workshop and business consultation"
+              />
+            </div>
+            <div class="timeline-body">
+              <span class="timeline-step">01 • Discovery</span>
               <h3>
                 We begin with listening, research, and requirement clarity
               </h3>
               <p>
-                The first stage focuses on understanding your goals, technical
-                needs, and expectations so the project starts with precision
-                instead of guesswork.
+                We identify your goals, technical priorities, and business
+                expectations before the execution path is defined.
               </p>
             </div>
-          </div>
+          </article>
 
-          <div class="journey-row row-right reveal">
-            <div class="journey-count">02</div>
-            <div class="journey-text">
-              <small>Planning</small>
+          <article class="timeline-card reveal">
+            <div class="timeline-thumb">
+              <img
+                src="images/planning.png"
+                alt="Project planning documents and delivery roadmap"
+              />
+            </div>
+            <div class="timeline-body">
+              <span class="timeline-step">02 • Planning</span>
               <h3>We shape the structure, priorities, and delivery path</h3>
               <p>
-                Once the direction is clear, we define the solution flow, scope,
-                timeline, and execution priorities to keep every next step
-                practical and aligned.
+                Scope, timeline, architecture, and priorities are aligned into a
+                practical plan for steady execution.
               </p>
             </div>
-          </div>
+          </article>
 
-          <div class="journey-row row-left reveal">
-            <div class="journey-count">03</div>
-            <div class="journey-text">
-              <small>Execution</small>
+          <article class="timeline-card reveal">
+            <div class="timeline-thumb">
+              <img
+                src="images/ui.png"
+                alt="UI design and development process in progress"
+              />
+            </div>
+            <div class="timeline-body">
+              <span class="timeline-step">03 • Execution</span>
               <h3>We design, develop, and refine with steady progress</h3>
               <p>
-                Interfaces, frontend experiences, and technical layers are
-                created with focus on usability, performance, and long-term
-                maintainability.
+                Interfaces and technical layers are created with a focus on
+                usability, performance, and maintainability.
               </p>
             </div>
-          </div>
+          </article>
 
-          <div class="journey-row row-right reveal">
-            <div class="journey-count">04</div>
-            <div class="journey-text">
-              <small>Validation</small>
+          <article class="timeline-card reveal">
+            <div class="timeline-thumb">
+              <img
+                src="images/testing2.png"
+                alt="Testing and quality validation on digital product"
+              />
+            </div>
+            <div class="timeline-body">
+              <span class="timeline-step">04 • Validation</span>
               <h3>We test carefully before anything moves live</h3>
               <p>
-                Functional checks, responsiveness review, and quality validation
-                help ensure the final output is stable, polished, and ready for
-                deployment.
+                Functional review, responsiveness checks, and quality validation
+                ensure stable and polished delivery.
               </p>
             </div>
-          </div>
+          </article>
 
-          <div class="journey-row row-left reveal">
-            <div class="journey-count">05</div>
-            <div class="journey-text">
-              <small>Support</small>
+          <article class="timeline-card reveal">
+            <div class="timeline-thumb">
+              <img
+                src="images/support.png"
+                alt="Ongoing support and monitoring after project launch"
+              />
+            </div>
+            <div class="timeline-body">
+              <span class="timeline-step">05 • Support</span>
               <h3>We stay available after launch for continuity and care</h3>
               <p>
-                Post-delivery support, refinements, and technical guidance help
-                the final solution continue performing smoothly after release.
+                Post-launch guidance, issue handling, and refinements help the
+                solution continue performing smoothly.
               </p>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
+
     <section class="outcome-metrics">
-      <div class="outcome-wrap">
+      <div class="container">
         <div class="outcome-header reveal">
-          <span class="outcome-label">Service Outcome Metrics</span>
-          <h2>Measured by impact, not just <strong>delivery</strong></h2>
+          <span class="section-tag">Service Outcome Metrics</span>
+          <h2>Measured by impact, not just <span>delivery</span></h2>
           <p>
             We focus on results that reflect service quality, technical
             stability, business continuity, and long-term client confidence.
@@ -595,6 +589,7 @@
                 outcomes, or proof statements from actual delivery work.
               </p>
             </div>
+
             <div class="outcome-note reveal-left">
               <span>Built on measurable service value</span>
               <p>
@@ -660,11 +655,11 @@
       <div class="cta-sub">
         Launch your idea with a premium digital experience
       </div>
-
       <button class="cta-button" onclick="document.location = 'contact.html'">
         Get Started <span><i class="fa-solid fa-rocket"></i></span>
       </button>
     </div>
+
     <div id="footer"></div>
     <script src="component.js"></script>
     <script src="services.js"></script>

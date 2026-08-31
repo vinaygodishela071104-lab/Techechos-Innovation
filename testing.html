@@ -3,22 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="testing.css" />
+
     <link rel="stylesheet" href="global.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <link rel="icon" href="images/logo1 (3).png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    
+
+    <link rel="stylesheet" href="testing.css" />
     <title>Testing Services</title>
   </head>
   <body>
     <div id="navbar"></div>
+
     <section class="hero">
       <div class="glow"></div>
 
       <div class="hero-content reveal">
-        <span class="hero-tag"> SOFTWARE TESTING SERVICES </span>
+        <section class="hero-tag">Software Testing Services</section>
 
         <h1>
           Deliver Reliable
@@ -35,14 +46,18 @@
         </p>
       </div>
     </section>
+
     <section class="automation-section">
       <div class="automation-container">
         <div class="automation-image reveal-left">
-          <img src="images/testing-1.avif" alt="" />
+          <img
+            src="images/testing-1.avif"
+            alt="Software testing automation dashboard"
+          />
         </div>
 
         <div class="automation-content">
-          <span class="section-tag"> AUTOMATED TESTING </span>
+          <section class="section-tag">Automated Testing</section>
 
           <h2>
             Accelerate Software Delivery With Intelligent
@@ -98,11 +113,12 @@
         </div>
       </div>
     </section>
+
     <section class="manual-testing">
       <div class="manual-container reveal-scale">
-        <span class="section-tag"> MANUAL TESTING </span>
+        <section class="section-tag">Manual Testing</section>
 
-        <h2>Human Expertise For Real-World Software Validation</h2>
+        <h2>Human Expertise For <span>Real-World Validation</span></h2>
 
         <p>
           Manual testing plays a critical role in ensuring software quality by
@@ -169,92 +185,83 @@
     </section>
     <section class="performance-testing">
       <div class="performance-container">
-        <!-- Left Content -->
-
         <div class="performance-content reveal-left">
-          <span class="section-tag"> PERFORMANCE TESTING </span>
+          <span class="section-tag">Performance Testing</span>
 
           <h2>
-            Ensure Speed, Stability And Scalability Across Every Environment
+            Ensure Speed, Stability, and <span>Scalability</span> Across Every
+            Environment
           </h2>
 
           <p>
-            Performance testing evaluates how applications respond under varying
-            workloads and traffic conditions. Our specialists identify
-            bottlenecks, optimize resource utilization, and ensure consistent
-            responsiveness even during peak demand.
+            Performance testing measures how applications behave under different
+            traffic levels, workloads, and usage conditions. Our team uncovers
+            bottlenecks, improves resource efficiency, and helps maintain smooth
+            responsiveness during peak demand.
           </p>
 
           <p>
-            Through detailed analysis and continuous monitoring, we help
-            organizations deliver fast, reliable, and scalable software
-            experiences that exceed user expectations.
+            With detailed analysis and continuous monitoring, we help businesses
+            deliver fast, dependable, and scalable digital experiences that
+            support long-term growth.
           </p>
+
+          <div class="performance-points">
+            <div class="point-item">
+              <span class="point-dot"></span>
+              <span>Load, stress, and endurance testing</span>
+            </div>
+            <div class="point-item">
+              <span class="point-dot"></span>
+              <span>Bottleneck detection and optimization</span>
+            </div>
+            <div class="point-item">
+              <span class="point-dot"></span>
+              <span>Scalable performance across peak demand</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Right Timeline -->
+        <div class="performance-visual reveal">
+          <div class="visual-glow"></div>
 
-        <div class="timeline">
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
+          <div class="performance-image-card">
+            <img
+              src="images/performance testing.png"
+              alt="Performance testing dashboard illustration"
+              class="performance-image"
+            />
 
-            <div class="timeline-content">
-              <h3>Load Testing</h3>
-              <p>Measure system performance under expected user traffic.</p>
+            <div class="floating-badge badge-top">
+              <strong>99.9%</strong>
+              <span>Stability</span>
             </div>
-          </div>
 
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-content">
-              <h3>Stress Testing</h3>
-              <p>Determine application limits during extreme workloads.</p>
+            <div class="floating-badge badge-middle">
+              <strong>High Load</strong>
+              <span>Traffic Ready</span>
             </div>
-          </div>
 
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-content">
-              <h3>Scalability Testing</h3>
-              <p>Validate growth readiness and infrastructure efficiency.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-content">
-              <h3>Endurance Testing</h3>
-              <p>Verify long-term stability during extended operation.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-content">
-              <h3>Optimization</h3>
-              <p>Implement improvements for maximum performance.</p>
+            <div class="floating-badge badge-bottom">
+              <strong>Fast Response</strong>
+              <span>Optimized Delivery</span>
             </div>
           </div>
         </div>
       </div>
     </section>
+
     <section class="security-testing">
       <div class="security-container reveal-left">
-        <span class="section-tag"> SECURITY TESTING </span>
+        <section class="section-tag">Security Testing</section>
 
-        <h2>Protect Applications Against Modern Security Threats</h2>
+        <h2>Protect Applications Against <span>Modern Threats</span></h2>
 
         <p class="section-intro">
           Security testing ensures your applications are protected from
           vulnerabilities, cyberattacks, and unauthorized access through
           continuous evaluation and validation.
         </p>
-
-        <!-- FLOW -->
 
         <div class="security-flow reveal-scale">
           <div class="flow-item">
@@ -300,19 +307,18 @@
         </div>
       </div>
     </section>
+
     <section class="browser-support">
       <div class="browser-container reveal">
-        <span class="section-tag"> CROSS-BROWSER COMPATIBILITY </span>
+        <section class="section-tag">Cross-Browser Compatibility</section>
 
-        <h2>Seamless Experience Across All Browsers & Devices</h2>
+        <h2>Seamless Experience Across <span>All Browsers</span> & Devices</h2>
 
         <p class="section-intro">
           We ensure your applications perform consistently across all major
           browsers, devices, and operating systems by validating rendering,
           functionality, and responsiveness under real-world conditions.
         </p>
-
-        <!-- Compatibility Grid -->
 
         <div class="browser-grid">
           <div class="browser-item reveal-left">
@@ -365,6 +371,7 @@
         </div>
       </div>
     </section>
+
     <div id="footer"></div>
     <script src="component.js"></script>
     <script src="testing.js"></script>
