@@ -124,7 +124,7 @@ textarea {
   color: #fff;
   background:
     linear-gradient(rgba(11, 15, 26, 0.76), rgba(11, 15, 26, 0.84)),
-    url("images/hero-epub-bg.jpg") center/cover no-repeat;
+    url("images/contact-hero.png") center/cover no-repeat;
   min-height: 100%;
 }
 
