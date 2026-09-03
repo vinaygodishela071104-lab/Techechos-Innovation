@@ -880,146 +880,6 @@ fab,
   transform: scale(1.05);
 }
 
-/* MOBILE */
-@media (max-width: 480px) {
-  .hero {
-    margin-top: 10px;
-    min-height: 85vh;
-    padding: 100px 16px 60px;
-  }
-
-  .hero-content h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero-content p {
-    font-size: 0.95rem;
-    padding: 0 10px;
-  }
-
-  .hero-tag,
-  .section-tag {
-    font-size: 0.68rem;
-    letter-spacing: 0.12em;
-  }
-
-  .hero::before,
-  .hero::after {
-    width: 250px;
-    height: 250px;
-    filter: blur(120px);
-  }
-
-  .remote-container,
-  .maintenance-wrapper,
-  .container,
-  .backup-wrap {
-    grid-template-columns: 1fr !important;
-    gap: 30px;
-  }
-
-  .remote-content h2,
-  .maintenance-content h2,
-  .network-content h2,
-  .backup-left h2,
-  .security-header h1 {
-    font-size: 1.8rem;
-  }
-
-  .remote-content p,
-  .maintenance-content p,
-  .network-content .intro,
-  .backup-left p {
-    font-size: 0.95rem;
-  }
-
-  .feature-list,
-  .maintenance-visual,
-  .stats-box {
-    grid-template-columns: 1fr !important;
-  }
-
-  .feature {
-    flex-direction: column;
-  }
-
-  .feature-icon {
-    width: 50px;
-    height: 50px;
-  }
-
-  .stats-strip {
-    flex-direction: column;
-  }
-
-  .support-box:hover {
-    transform: none;
-  }
-
-  .info-box,
-  .visual-box {
-    padding: 25px;
-  }
-}
-
-/* TABLET */
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 3rem;
-  }
-
-  .remote-container,
-  .maintenance-wrapper,
-  .container,
-  .backup-wrap {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .feature-list {
-    grid-template-columns: 1fr;
-  }
-
-  .maintenance-visual {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .stats-box {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .hero {
-    padding: 80px 20px;
-  }
-}
-
-/* SMALL LAPTOP */
-@media (max-width: 1024px) {
-  .hero-content h1 {
-    font-size: 3.5rem;
-  }
-
-  .remote-container,
-  .maintenance-wrapper,
-  .container,
-  .backup-wrap {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  .feature-list {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .maintenance-visual {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .stats-box {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
 /* DARK MODE */
 body.dark-mode {
   background: #0b0b14;
@@ -1110,4 +970,591 @@ body.dark-mode .cta-btn {
 
 body.dark-mode .network-image img {
   filter: brightness(0.82);
+}
+/* Samsung Galaxy S8+ */
+@media screen and (max-width: 480px) {
+  .glow {
+    width: 180px;
+    height: 180px;
+    filter: blur(60px);
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 110px 16px 70px;
+  }
+
+  .hero::before,
+  .hero::after {
+    width: 320px;
+    height: 320px;
+    filter: blur(140px);
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero-tag,
+  .section-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    padding: 7px 12px;
+    margin-bottom: 14px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    max-width: 100%;
+  }
+
+  .remote-support,
+  .system-maintenance,
+  .network-troubleshooting,
+  .backup-diagonal,
+  .security-section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .system-maintenance,
+  .network-troubleshooting,
+  .backup-diagonal {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .remote-container,
+  .maintenance-wrapper,
+  .backup-wrap,
+  .container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .container {
+    display: grid;
+  }
+
+  .remote-content h2,
+  .maintenance-content h2,
+  .network-content h2,
+  .backup-left h2,
+  .security-header h1 {
+    font-size: 1.8rem;
+    line-height: 1.25;
+    margin-bottom: 18px;
+  }
+
+  .remote-content p,
+  .maintenance-content p,
+  .network-content .intro,
+  .backup-left p,
+  .security-header p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .remote-visual,
+  .network-sidebar {
+    gap: 18px;
+  }
+
+  .support-box,
+  .info-card,
+  .feature-item,
+  .security-card,
+  .visual-box,
+  .main-card,
+  .info-box {
+    padding: 22px 18px;
+    border-radius: 18px;
+  }
+
+  .support-box:hover {
+    transform: translateY(-6px);
+  }
+
+  .features {
+    margin: 28px 0;
+  }
+
+  .feature {
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .feature-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .feature-content h4,
+  .feature-item h4,
+  .info-card h4,
+  .security-card h3,
+  .step h4 {
+    font-size: 1rem;
+  }
+
+  .cta-btn {
+    width: 100%;
+    text-align: center;
+    padding: 15px 22px;
+  }
+
+  .maintenance-visual,
+  .feature-list,
+  .stats-box,
+  .stats-strip,
+  .security-card-grid,
+  .security-tags {
+    grid-template-columns: 1fr;
+  }
+
+  .maintenance-visual {
+    gap: 18px;
+  }
+
+  .main-card {
+    grid-column: auto;
+    padding: 28px 20px;
+  }
+
+  .main-card i {
+    font-size: 3rem;
+  }
+
+  .feature-list {
+    gap: 18px;
+  }
+
+  .info-box h3 {
+    font-size: 1.3rem;
+  }
+
+  .info-box p {
+    margin-bottom: 18px;
+  }
+
+  .info-box ul li,
+  .visual-list li,
+  .step p,
+  .security-tag,
+  .stat span {
+    font-size: 0.9rem;
+  }
+
+  .stats-box {
+    gap: 12px;
+  }
+
+  .stat {
+    padding: 22px 12px;
+    border-radius: 16px;
+  }
+
+  .stat h3 {
+    font-size: 1.6rem;
+  }
+
+  .network-image {
+    margin-top: 18px;
+    border-radius: 18px;
+  }
+
+  .timeline {
+    padding-left: 16px;
+    margin-top: 24px;
+  }
+
+  .timeline::before {
+    left: 5px;
+  }
+
+  .step::before {
+    left: -16px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .visual-box h3 {
+    font-size: 1.35rem;
+    margin-bottom: 16px;
+  }
+
+  .visual-list li {
+    gap: 8px;
+    padding: 10px 0;
+  }
+
+  .stats-strip {
+    display: grid;
+    gap: 12px;
+  }
+
+  .stats-strip .stat {
+    padding: 16px 12px;
+  }
+
+  .stats-strip .stat h4 {
+    font-size: 1.2rem;
+  }
+
+  .security-header {
+    margin-bottom: 35px;
+  }
+
+  .security-card-grid,
+  .security-tags {
+    gap: 16px;
+  }
+
+  .security-card {
+    padding: 20px 18px;
+  }
+
+  .security-tag {
+    padding: 11px 14px;
+  }
+}
+
+/* iPad Mini */
+@media screen and (min-width: 768px) and (max-width: 820px) {
+  .hero {
+    padding: 130px 24px 90px;
+    min-height: 85vh;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 760px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.7rem;
+    line-height: 1.15;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    max-width: 700px;
+  }
+
+  .remote-support,
+  .system-maintenance,
+  .network-troubleshooting,
+  .backup-diagonal,
+  .security-section {
+    padding-top: 85px;
+    padding-bottom: 85px;
+  }
+
+  .remote-container,
+  .maintenance-wrapper,
+  .backup-wrap,
+  .container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .container {
+    display: grid;
+  }
+
+  .remote-content h2,
+  .maintenance-content h2,
+  .network-content h2,
+  .backup-left h2,
+  .security-header h1 {
+    font-size: 2.1rem;
+  }
+
+  .remote-content p,
+  .maintenance-content p,
+  .network-content .intro,
+  .backup-left p,
+  .security-header p {
+    font-size: 1rem;
+  }
+
+  .maintenance-visual {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .main-card {
+    grid-column: 1 / span 2;
+    padding: 36px 28px;
+  }
+
+  .feature-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .network-sidebar {
+    gap: 20px;
+  }
+
+  .info-box,
+  .visual-box {
+    padding: 28px;
+  }
+
+  .stats-box {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .stat {
+    padding: 24px 12px;
+  }
+
+  .stat h3 {
+    font-size: 1.75rem;
+  }
+
+  .network-image {
+    max-width: 100%;
+  }
+
+  .security-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .security-tags {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* iPad Pro 11" */
+@media screen and (min-width: 821px) and (max-width: 1024px) {
+  .hero {
+    padding: 140px 28px 90px;
+    min-height: 88vh;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 860px;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-content p {
+    max-width: 760px;
+    font-size: 1rem;
+  }
+
+  .remote-container,
+  .maintenance-wrapper,
+  .backup-wrap {
+    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .container {
+    grid-template-columns: 1.2fr 0.9fr;
+    gap: 30px;
+  }
+
+  .remote-content h2,
+  .maintenance-content h2,
+  .network-content h2,
+  .backup-left h2,
+  .security-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .support-box,
+  .info-card,
+  .feature-item,
+  .security-card {
+    padding: 22px;
+  }
+
+  .maintenance-visual {
+    gap: 18px;
+  }
+
+  .main-card {
+    padding: 38px 28px;
+  }
+
+  .feature-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .info-box {
+    padding: 28px;
+  }
+
+  .info-box h3 {
+    font-size: 1.35rem;
+  }
+
+  .stats-box {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .stat {
+    padding: 24px 10px;
+  }
+
+  .stat h3 {
+    font-size: 1.7rem;
+  }
+
+  .visual-box {
+    padding: 28px;
+  }
+
+  .stats-strip {
+    gap: 8px;
+  }
+
+  .stats-strip .stat {
+    padding: 16px 10px;
+  }
+
+  .security-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .security-tags {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+/* Nest Hub */
+@media screen and (width: 1024px) and (height: 600px) {
+  .hero {
+    min-height: auto;
+    padding: 90px 28px 60px;
+  }
+
+  .hero-content {
+    max-width: 820px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+
+  .hero-content p {
+    font-size: 0.96rem;
+    line-height: 1.7;
+    max-width: 720px;
+  }
+
+  .remote-support,
+  .system-maintenance,
+  .network-troubleshooting,
+  .backup-diagonal,
+  .security-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .remote-container,
+  .maintenance-wrapper,
+  .backup-wrap {
+    gap: 30px;
+  }
+
+  .container {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 24px;
+  }
+
+  .remote-content h2,
+  .maintenance-content h2,
+  .network-content h2,
+  .backup-left h2,
+  .security-header h1 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .remote-content p,
+  .maintenance-content p,
+  .network-content .intro,
+  .backup-left p,
+  .security-header p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .support-box,
+  .info-card,
+  .feature-item,
+  .security-card,
+  .visual-box,
+  .info-box {
+    padding: 20px;
+  }
+
+  .main-card {
+    padding: 28px 24px;
+  }
+
+  .main-card i {
+    font-size: 3rem;
+    margin-bottom: 12px;
+  }
+
+  .feature-list {
+    gap: 16px;
+  }
+
+  .stats-box {
+    gap: 10px;
+  }
+
+  .stat {
+    padding: 18px 10px;
+  }
+
+  .stat h3 {
+    font-size: 1.5rem;
+  }
+
+  .network-image {
+    margin-top: 16px;
+  }
+
+  .timeline {
+    margin-top: 20px;
+  }
+
+  .step {
+    margin-bottom: 18px;
+  }
+
+  .security-header {
+    margin-bottom: 32px;
+  }
+
+  .security-card-grid,
+  .security-tags {
+    gap: 16px;
+  }
 }
