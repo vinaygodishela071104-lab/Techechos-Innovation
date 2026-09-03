@@ -736,7 +736,13 @@ fab,
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+body.dark-mode .visual-list li {
+  color: #ffffff;
+}
 
+body.dark-mode .visual-list li i {
+  color: var(--primary);
+}
 .stats-strip {
   margin-top: 25px;
   display: flex;

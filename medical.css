@@ -953,145 +953,6 @@ h6 {
   margin-bottom: 10px;
 }
 
-body.dark-mode {
-  background: #0f172a;
-  color: #f8fafc;
-}
-
-body.dark-mode .hero,
-body.dark-mode .icd-section,
-body.dark-mode .cpt-section,
-body.dark-mode .hcpcs-section,
-body.dark-mode .compliance-review,
-body.dark-mode .audit-support {
-  background-color: #0f172a;
-}
-
-body.dark-mode .section-title h2,
-body.dark-mode .section-heading h2,
-body.dark-mode .hero h1,
-body.dark-mode .icd-content1 h3,
-body.dark-mode .left h3,
-body.dark-mode .hcpcs-info h3,
-body.dark-mode .audit-left h2 {
-  color: #ffffff;
-}
-
-body.dark-mode .section-title p,
-body.dark-mode .section-heading p,
-body.dark-mode .hero p,
-body.dark-mode .icd-content1 p,
-body.dark-mode .left ul li,
-body.dark-mode .service-box p,
-body.dark-mode .stats p,
-body.dark-mode .content2 p,
-body.dark-mode .process-card p,
-body.dark-mode .audit-left p,
-body.dark-mode .point p,
-body.dark-mode .floating-box span,
-body.dark-mode .card p {
-  color: #cbd5e1;
-}
-
-body.dark-mode .stat-box h3,
-body.dark-mode .stat-box span {
-  color: #ffffff;
-}
-
-body.dark-mode .card,
-body.dark-mode .point,
-body.dark-mode .service-box,
-body.dark-mode .process-card,
-body.dark-mode .content2 {
-  background: #1d2433;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-}
-
-body.dark-mode .stat-box,
-body.dark-mode .bottom-content,
-body.dark-mode .floating-box {
-  background: #1e293b;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-}
-
-body.dark-mode .card h3,
-body.dark-mode .point h4,
-body.dark-mode .service-box h4,
-body.dark-mode .stats h2,
-body.dark-mode .floating-box h3,
-body.dark-mode .process-card h3,
-body.dark-mode .content2 h3 {
-  color: #ffffff;
-}
-
-body.dark-mode .hcpcs-info {
-  background: linear-gradient(135deg, #f39618, #7c3aed);
-}
-
-body.dark-mode .hero-tag,
-body.dark-mode .section-tag,
-body.dark-mode .badge,
-body.dark-mode .tag,
-body.dark-mode .audit-tag {
-  background: rgba(243, 150, 24, 0.18);
-  color: #fbbf24;
-  border-color: rgba(251, 191, 36, 0.22);
-}
-
-body.dark-mode .btn,
-body.dark-mode .button,
-body.dark-mode .audit-btn {
-  background: linear-gradient(135deg, #f39618, #7c3aed);
-  color: #ffffff;
-}
-
-body.dark-mode .btn:hover,
-body.dark-mode .button:hover,
-body.dark-mode .audit-btn:hover {
-  box-shadow: 0 12px 25px rgba(243, 150, 24, 0.35);
-}
-
-body.dark-mode .hcpcs-btn {
-  background: #ffffff;
-  color: #f39618;
-}
-
-body.dark-mode .stats {
-  background: #16213e;
-  border-left: 4px solid #f39618;
-}
-
-body.dark-mode .timeline::before {
-  background: linear-gradient(#f39618, #7c3aed);
-}
-
-body.dark-mode input,
-body.dark-mode textarea,
-body.dark-mode select {
-  background: #1e293b;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-body.dark-mode input::placeholder,
-body.dark-mode textarea::placeholder {
-  color: #94a3b8;
-}
-
-body.dark-mode .card:hover,
-body.dark-mode .point:hover,
-body.dark-mode .service-box:hover,
-body.dark-mode .process-card:hover,
-body.dark-mode .stat-box:hover,
-body.dark-mode .floating-box:hover {
-  background: #293548;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
-}
-
-body.dark-mode .icd-right img {
-  filter: brightness(0.9);
-}
 /* Samsung Galaxy S8+ */
 @media screen and (max-width: 480px) {
   :root {
@@ -1621,4 +1482,260 @@ body.dark-mode .icd-right img {
     min-height: auto;
     padding: 20px;
   }
+}
+/* =========================================
+   DARK MODE
+   ========================================= */
+
+/* Main body */
+body.dark-mode {
+  background: #111111;
+  color: #ffffff;
+}
+
+/* Common headings */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #ffffff;
+}
+
+/* Common section backgrounds */
+body.dark-mode .icd-section,
+body.dark-mode .compliance-review,
+body.dark-mode .audit-support {
+  background: #151515;
+}
+
+body.dark-mode .cpt-section {
+  background: #111111;
+}
+
+body.dark-mode .hcpcs-section {
+  background: linear-gradient(180deg, #111111, #181818);
+}
+
+/* =========================================
+   SECTION TEXT
+   ========================================= */
+
+body.dark-mode .section-title h2,
+body.dark-mode .section-heading h2,
+body.dark-mode .audit-left h2 {
+  color: #ffffff;
+}
+
+body.dark-mode .section-title p,
+body.dark-mode .section-heading p,
+body.dark-mode .audit-left p,
+body.dark-mode .icd-content1 p,
+body.dark-mode .left ul li,
+body.dark-mode .service-box p,
+body.dark-mode .stats p,
+body.dark-mode .content2 p,
+body.dark-mode .process-card p,
+body.dark-mode .hcpcs-info p,
+body.dark-mode .card p,
+body.dark-mode .point p {
+  color: #d0d0d0;
+}
+
+/* =========================================
+   ICD SECTION
+   ========================================= */
+
+body.dark-mode .point {
+  background: #202020;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .point h4,
+body.dark-mode .service-box h4 {
+  color: #ffffff;
+}
+
+body.dark-mode .floating-box {
+  background: #202020;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+}
+
+body.dark-mode .floating-box span {
+  color: #d0d0d0;
+}
+
+/* =========================================
+   CPT CARDS
+   ========================================= */
+
+body.dark-mode .card {
+  background: #202020;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .card h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .card p {
+  color: #d0d0d0;
+}
+
+/* Icons - primary/secondary gradient + white icon */
+body.dark-mode .card .icon {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #ffffff;
+}
+
+/* =========================================
+   CPT BOTTOM CONTENT
+   ========================================= */
+
+body.dark-mode .bottom-content {
+  background: #202020;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .left ul li {
+  color: #d0d0d0;
+}
+
+body.dark-mode .left ul li i {
+  color: var(--primary);
+}
+
+/* =========================================
+   STAT BOXES
+   ========================================= */
+
+body.dark-mode .stats {
+  background: #202020;
+  border-left-color: var(--secondary);
+}
+
+body.dark-mode .stats h2 {
+  color: #ffffff;
+}
+
+body.dark-mode .stats p {
+  color: #d0d0d0;
+}
+
+/* =========================================
+   HCPCS SECTION
+   ========================================= */
+
+body.dark-mode .hcpcs-info {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+body.dark-mode .hcpcs-info h3,
+body.dark-mode .hcpcs-info p {
+  color: #ffffff;
+}
+
+body.dark-mode .hcpcs-info .tag {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+body.dark-mode .hcpcs-btn {
+  background: #ffffff;
+  color: var(--primary);
+}
+
+/* HCPCS service cards */
+body.dark-mode .service-box {
+  background: #202020;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .service-content h4 {
+  color: #ffffff;
+}
+
+body.dark-mode .service-content p {
+  color: #d0d0d0;
+}
+
+/* HCPCS icons */
+body.dark-mode .service-box i {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+/* =========================================
+   COMPLIANCE / PROCESS SECTION
+   ========================================= */
+
+body.dark-mode .process-card {
+  background: #202020;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .process-card h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .process-card p {
+  color: #d0d0d0;
+}
+
+body.dark-mode .process-icon {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #ffffff;
+}
+
+body.dark-mode .arrow {
+  color: var(--primary);
+}
+
+/* =========================================
+   AUDIT SECTION
+   ========================================= */
+
+body.dark-mode .stat-box {
+  background: #202020;
+  border-color: #333333;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .stat-box h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .stat-box span {
+  color: #d0d0d0;
+}
+
+body.dark-mode .content2 {
+  background: #202020;
+  border-color: #333333;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .content2 h3 {
+  color: #ffffff;
+}
+
+/* =========================================
+   GLOW / ICON VISIBILITY
+   ========================================= */
+
+body.dark-mode .hero-card i {
+  color: var(--primary);
+}
+
+body.dark-mode .item {
+  color: #ffffff;
+}
+
+body.dark-mode .heading-highlight {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

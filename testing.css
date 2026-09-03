@@ -647,12 +647,6 @@ body.dark-mode {
   color: var(--text);
 }
 
-body.dark-mode .hero {
-  background:
-    linear-gradient(rgba(5, 5, 12, 0.82), rgba(5, 5, 12, 0.86)),
-    url("images/testing-hero.jpg") center/cover no-repeat;
-}
-
 body.dark-mode .automation-section,
 body.dark-mode .performance-testing,
 body.dark-mode .security-testing {

@@ -662,7 +662,18 @@ h6 {
   font-size: 0.8rem;
   margin-top: 2px;
 }
+/* =========================
+   Dark Mode - Scope List
+========================= */
 
+body.dark-mode .scope-list li {
+  color: #f1f1f1;
+}
+
+body.dark-mode .scope-list li i {
+  background: rgba(243, 150, 24, 0.18);
+  color: var(--primary);
+}
 .scope-note {
   padding: 22px 20px;
   border-radius: 20px;
